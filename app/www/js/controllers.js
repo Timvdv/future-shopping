@@ -1,7 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -21,8 +19,34 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+.controller('Settings', function($scope)
+{
+    $scope.settings = {
+       enableFriends: true
+    };    
+    
+    // javascrrrrrript hierrrrrr
+    console.log('settings controller');
+})
+
+.controller('ShoppingCart', function($scope)
+{
+  /**
+   * Hier moet de JSON van de producten in,
+   * deze moet vervolgens verwerkt worden in de HTML
+   * SVEN ? Vind ik wel een leuk klusje voor jou. BEstand staat
+   * al gekoppeld.
+   *
+   * Als je heel veel zin hebt om te TRYHARDEN kijk eens hoe je die producten
+   * kan verwerken in een facory (net zoals bij chats gedaan is) dit is namelijk wel een
+   * mooie usecase voor een factory (services.js en tab-chats + check de routes file)
+   */
+  $scope.tasks = [
+    { title: 'Collect coins' },
+    { title: 'Eat ' },
+    { title: 'Get himushroomsgh enough to grab the flag' },
+    { title: 'Find the Princess' }
+  ];
+  
+  console.log("kaas");
+})

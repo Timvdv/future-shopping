@@ -1,0 +1,46 @@
+<ion-view view-title="Settings" hide-nav-bar="true">
+    <ion-content>
+        <h1>
+        Settings page!!
+        </h1>
+        <ion-list>
+        <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+        </ion-toggle>
+        </ion-list>
+
+        <div class="list">
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Voornaam</span>
+        <input type="text" placeholder="John">
+        </label>
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Achternaam</span>
+        <input type="text" placeholder="Doe">
+        </label>
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="john@doe.com">
+        </label>
+        </div>
+
+        <ul class="list">
+
+          <li class="item item-toggle">
+             Thuisbezorgd?
+             <label class="toggle">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+        </ul>
+
+        <button class="button button-balanced">
+          Opslaan
+        </button
+    
+    </ion-content>
+</ion-view>

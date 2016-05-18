@@ -98,3 +98,8 @@
     position: fixed;
     left: 50%;
 }
+
+.tab-nav
+{
+    top:0;
+}
