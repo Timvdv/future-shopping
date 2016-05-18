@@ -5,7 +5,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding-bottom: 45px; /* Moet afgesteld worden op de footer height */
     padding-top: 0;
 }
 
