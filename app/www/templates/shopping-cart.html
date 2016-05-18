@@ -1,78 +1,17 @@
 <ion-view view-title="Shopping cart" hide-nav-bar="true">
      <ion-content >
        <div class="list products">
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">Gouda kaas 48+</h2>
-             <p class="center">€2,45</p>
-             <img class="center" src="img/goudakaas.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">Coca Cola</h2>
-             <p class="center">€1,25</p>
-             <img class="center" src="img/cocacola.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">Kip Filet</h2>
-             <p class="center">€1,89</p>
-             <img class="center" src="img/kipfilet.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">La Chouffe</h2>
-             <p class="center">€2,45</p>
-             <img class="center" src="img/lachouffe.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">Gouda kaas 48+</h2>
-             <p class="center">€2,45</p>
-             <img class="center" src="img/goudakaas.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
-           <div class="item item-thumbnail-top" href="#">
-             <h2 class="center">Coca Cola</h2>
-             <p class="center">€1,25</p>
-             <img class="center" src="img/cocacola.JPG">
-             <div class="productValue">
-                 <i class="icon ion-ios-minus"></i>
-                 <label class="item item-input">
-                   <input type="text" placeholder="1">
-                 </label>
-                 <i class="icon ion-ios-plus"></i>
-             </div>
-           </div>
+          <div class="item item-thumbnail-top" href="#" ng-repeat="item in products">
+           <h2 class="center">{{item.title}}</h2>
+           <p class="center">€ {{item.prijsFrontEnd}}</p>
+           <img class="center" src={{item.thumbnail}}>
+           <div class="productValue">
+               <i class="icon ion-ios-minus"></i>
+               <label class="item item-input">
+                 <input type="text" placeholder="1">
+               </label>
+               <i class="icon ion-ios-plus"></i>
+          </div>           
        </div>
      </ion-content>
      <div class="bar bar-footer bar-dark">
