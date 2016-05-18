@@ -47,4 +47,57 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+
+.factory('Products', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var products = [
+    { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+    { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+    { title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
+    { title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
+    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
+  ];
+
+  var favorites = [
+    { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+    { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+    { title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 }
+  ];
+
+  return {
+    all: function() {
+      return products;
+    },
+    remove: function(product) {
+      products.splice(products.indexOf(product), 1);
+    },
+    get: function(product) {
+      for (var i = 0; i < chats.length; i++) {
+        if(products.indexOf(product))
+        {
+          return products[products.indexOf(product)];
+        }
+      }
+      return null;
+    },
+    addToFavorites: function(product){
+      if(favorites.indexOf(product))
+      favorites.push(product);
+    },
+    getFavorites: function() {
+      return favorites;
+    },
+    removeFavorite: function(product) {
+      favorites.splice(favorites.indexOf(product), 1);
+      console.log("verwijder.");
+    }
+  };
 });
