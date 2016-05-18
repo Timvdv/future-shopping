@@ -15,9 +15,12 @@
                  <input type="text" placeholder="{{item.aantal}}">
                </label>
                <i class="icon ion-ios-plus" ng-click="addQuantity(item)"></i>
-          </div>    
+          </div>   
+          <ion-option-button class="button-energized" ng-click="">
+              <i class="ion-ios-heart"></i>Favorite 
+          </ion-option-button>   
           <ion-option-button class="button-assertive" ng-click="removeProduct(item)">
-              Delete
+              <i class="ion-ios-trash"></i>Delete
           </ion-option-button>      
         </ion-item>
         </ion-list>
