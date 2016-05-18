@@ -73,6 +73,13 @@ angular.module('starter.controllers', [])
     // { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
   ];
 
+  $scope.updateTotals = function()
+  {
+    //KOTS CODE -> BLUUUUGHGHHHHH
+    document.getElementById('price').innerHTML =  $scope.totalPrice;
+    document.getElementById('time').innerHTML =  $scope.totalTime;
+  }
+
   // Bereken de nieuwe totale prijs & de inpaktijd.
   $scope.calculateData = function() 
   { 
@@ -86,10 +93,9 @@ angular.module('starter.controllers', [])
     $scope.totalPrice = Math.round(totalPrice * 100) / 100;
     $scope.totalTime = Math.round(totalTime / 60 * 100) / 100;
 
-    //KOTS CODE -> BLUUUUGHGHHHHH
-    document.getElementById('price').innerHTML =  $scope.totalPrice;
-    document.getElementById('time').innerHTML =  $scope.totalTime;
-
+    $scope.totalPrice = ('0' + $scope.totalPrice.split(".")[1]).slice(-2)
+    
+    $scope.updateTotals();
   }
 
   // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
