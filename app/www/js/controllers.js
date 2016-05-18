@@ -49,6 +49,8 @@ angular.module('starter.controllers', [])
   $scope.shouldShowDelete = false;
   $scope.shouldShowReorder = false;
   $scope.listCanSwipe = true;
+  $scope.totalPrice = 0;
+  $scope.totalTime = 0;
 
   $scope.products = [
     { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
@@ -71,34 +73,22 @@ angular.module('starter.controllers', [])
     // { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
   ];
 
-
-  // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
-  var totalPrice = 0;
-  var totalTime = 0;
-  for (var i = 0; i < $scope.products.length; i++) {
-    totalPrice += ($scope.products[i].aantal * $scope.products[i].prijs);
-    totalTime += ($scope.products[i].aantal * $scope.products[i].inpakTijd);
-  } 
-  $scope.totalPrice = totalPrice;
-  $scope.totalTime = totalTime / 60;
-
   // Bereken de nieuwe totale prijs & de inpaktijd.
   $scope.calculateData = function() 
   { 
-    console.log("Berekenen.");
     var totalPrice = 0;
     var totalTime = 0
     for (var i = 0; i < $scope.products.length; i++) {
       totalPrice += ($scope.products[i].aantal * $scope.products[i].prijs);
       totalTime += ($scope.products[i].aantal * $scope.products[i].inpakTijd);
-    } 
+    }
+
     $scope.totalPrice = totalPrice;
     $scope.totalTime = totalTime / 60;
-    //$scope.$apply;
-    console.log($scope.totalPrice);
-    console.log($scope.totalTime);
-  } 
+  }
 
+  // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
+  $scope.calculateData();
 
   // Voeg het aantal van een product toe.
   $scope.addQuantity = function(item)
@@ -127,7 +117,6 @@ angular.module('starter.controllers', [])
       $scope.calculateData();
   }
 
-
   // Verwijder product uit de winkelmand.
   $scope.removeProduct = function (item)
   {
@@ -151,6 +140,5 @@ angular.module('starter.controllers', [])
       }, function(error) {
           console.log("An error happened -> " + error);
       });
-  };  
-
+  };
 })
