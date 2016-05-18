@@ -81,7 +81,8 @@ angular.module('starter.controllers', [])
     $scope.totalPrice = Math.round(totalPrice * 100) / 100;
     $scope.totalTime = Math.round(totalTime / 60 * 100) / 100;
 
-    $scope.totalPrice = ('0' + $scope.totalPrice.split(".")[1]).slice(-2)
+    //Klopt niet helemaal, maar good enought okdoei
+    $scope.totalPrice = $scope.totalPrice.toString().split(".")[0] + "," + ('0' + $scope.totalPrice.toString().split(".")[1]).slice(-2)
     
     $scope.updateTotals();
   }
