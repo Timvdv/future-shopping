@@ -2,11 +2,12 @@
 
 /* Product css */
 
-.list.products {
+.list.products .list {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     padding-bottom: 45px; /* Moet afgesteld worden op de footer height */
+    padding-top: 0;
 }
 .list.products .item.item-thumbnail-top {
     width: 50%;
@@ -22,6 +23,12 @@
     border-top: 1px solid #979797;
     border-right: 1px solid #979797;
     border-bottom: none;
+}
+.list.products a.item-content {
+    padding: 10px;
+}
+.list.products .item.item-thumbnail-top .slider-pager {
+    display: none;
 }
 .list.products .item.item-thumbnail-top h2.center, .list.products .item.item-thumbnail-top p.center {
     text-align: center;
