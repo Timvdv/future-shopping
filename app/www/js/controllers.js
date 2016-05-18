@@ -47,8 +47,8 @@ angular.module('starter.controllers', [])
   // deze manier later geen eventuele regexes toe te passen. :)
 
    $scope.shouldShowDelete = false;
- $scope.shouldShowReorder = false;
- $scope.listCanSwipe = true;
+   $scope.shouldShowReorder = false;
+   $scope.listCanSwipe = true;
 
   $scope.products = [
     { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
