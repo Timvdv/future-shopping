@@ -71,8 +71,13 @@ angular.module('starter.controllers', [])
       totalTime += ($scope.products[i].aantal * $scope.products[i].inpakTijd);
     }
 
-    $scope.totalPrice = totalPrice;
-    $scope.totalTime = totalTime / 60;
+    $scope.totalPrice = Math.round(totalPrice * 100) / 100;
+    $scope.totalTime = Math.round(totalTime / 60 * 100) / 100;
+
+    //KOTS CODE -> BLUUUUGHGHHHHH
+    document.getElementById('price').innerHTML =  $scope.totalPrice;
+    document.getElementById('time').innerHTML =  $scope.totalTime;
+
   }
 
   // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
