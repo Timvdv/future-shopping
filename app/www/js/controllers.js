@@ -85,18 +85,25 @@ angular.module('starter.controllers', [])
       for (var i = 0; i <   $scope.products.length; i++) {
           if(item.title == $scope.products[i].title)
           {
-            if($scope.products[i].aantal <= 1){
-              $scope.products.splice(i, 1);
-              $scope.$apply;
-            } else {
+            if($scope.products[i].aantal >= 2){
               $scope.products[i].aantal -= 1;
               $scope.$apply;
-            }            
+            }           
+          }
+      }
+  }
+
+  $scope.removeProduct = function (item)
+  {
+      for (var i = 0; i <   $scope.products.length; i++) {
+          if(item.title == $scope.products[i].title)
+          {
+            $scope.products.splice(i,1);
+            $scope.$apply;          
           }
       }
   }
   
-
   $scope.scanBarcode = function()
   {
     console.log('clicked');
