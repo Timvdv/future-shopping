@@ -11,6 +11,7 @@
 
 .list.products .item.item-thumbnail-top {
     width: 50%;
+    margin: 0;
 }
 
 .list.products .item.item-thumbnail-top:nth-child(even) {
