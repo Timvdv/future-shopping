@@ -46,6 +46,10 @@ angular.module('starter.controllers', [])
   // Heb de prijs even 2 keer toegevoegd, omdat integers bij de front end worden afgerond en hoef op
   // deze manier later geen eventuele regexes toe te passen. :)
 
+   $scope.shouldShowDelete = false;
+ $scope.shouldShowReorder = false;
+ $scope.listCanSwipe = true;
+
   $scope.products = [
     { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
     { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
@@ -115,4 +119,5 @@ angular.module('starter.controllers', [])
           console.log("An error happened -> " + error);
       });
   };  
+
 })
