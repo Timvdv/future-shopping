@@ -15,16 +15,16 @@
 
 .list.products .item.item-thumbnail-top:nth-child(even) {
     border-left: none;
-    border-top: 1px solid #979797;
+    border-top: none;
     border-right: none;
-    border-bottom: none;
+    border-bottom: 1px solid #979797;
 }
 
 .list.products .item.item-thumbnail-top:nth-child(odd) {
     border-left: none;
-    border-top: 1px solid #979797;
+    border-top: none;
     border-right: 1px solid #979797;
-    border-bottom: none;
+    border-bottom: 1px solid #979797;
 }
 
 .list.products a.item-content {
@@ -137,7 +137,7 @@ i.ion-ios-heart {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(100%) translateX(-50%);
+    transform: translateY(50%) translateX(-50%);
 }
 
 i.ion-ios-trash {
@@ -145,5 +145,5 @@ i.ion-ios-trash {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(100%) translateX(-50%);
+    transform: translateY(50%) translateX(-50%);
 }
