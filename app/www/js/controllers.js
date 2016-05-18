@@ -45,30 +45,57 @@ angular.module('starter.controllers', [])
 
   // Heb de prijs even 2 keer toegevoegd, omdat integers bij de front end worden afgerond en hoef op
   // deze manier later geen eventuele regexes toe te passen. :)
+
   $scope.products = [
-    { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG"},
-    { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG"},
-    { title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG"},
-    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG" },
-    { title: 'Kip Cilet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG" },
-    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG" },
-    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG" },
-    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG" },
+    { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+    { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+    { title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
+    { title: 'Kip Cilet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
+    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 },
 
     // Dit hieronder is even copy pasta werk, kan later weer weg.
-    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG" },
-    { title: 'Kip Cilet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG" },
-    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG" },
-    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG" },
-    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG" },
-    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG" },
-    { title: 'Kip Cilet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG" },
-    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG" },
-    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG" },
-    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG" }
+    { title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+    { title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+    { title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+    { title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
+    { title: 'Kip Cilet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+    { title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+    { title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
+    { title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
   ];
   
-  console.log("kaas");
+
+  $scope.addQuantity = function(item)
+  {
+      for (var i = 0; i <   $scope.products.length; i++) {
+          if(item.title == $scope.products[i].title)
+          {
+            $scope.products[i].aantal += 1;
+            $scope.$apply;
+            console.log($scope.products[i]);
+          }
+      }
+  }
+
+  $scope.decreaseQuantity = function(item)
+  {
+      for (var i = 0; i <   $scope.products.length; i++) {
+          if(item.title == $scope.products[i].title)
+          {
+            if($scope.products[i].aantal <= 1){
+              $scope.products.splice(i, 1);
+              $scope.$apply;
+            } else {
+              $scope.products[i].aantal -= 1;
+              $scope.$apply;
+            }            
+          }
+      }
+  }
+  
 
   $scope.scanBarcode = function()
   {
