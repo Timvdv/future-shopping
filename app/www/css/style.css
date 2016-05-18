@@ -114,3 +114,17 @@
 {
     top:0;
 }
+i.ion-ios-heart {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+}
+i.ion-ios-trash {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+}
