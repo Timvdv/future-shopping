@@ -1,4 +1,7 @@
 /* Empty. Add your own CSS if you like */
+html, body {
+    font-family: 'Raleway', sans-serif;
+}
 
 /* Product css */
 .list.products .list {
@@ -48,6 +51,7 @@
 .list.products .item.item-thumbnail-top p.center {
     font-size: 22px;
     color: #000000;
+    overflow: visible;
 }
 
 .list.products .item.item-thumbnail-top img.center {
@@ -96,6 +100,7 @@
 }
 
 .bar.bar-footer.bar-dark {
+    height: 55px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -146,4 +151,22 @@ i.ion-ios-trash {
     top: 50%;
     left: 50%;
     transform: translateY(50%) translateX(-50%);
+}
+
+.bold.ng-binding {
+    font-weight: 600;
+}
+
+.totalPrice, .readyIn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.readyIn {
+    right: 15px;
+}
+
+.totalPrice {
+    left: 15px;
 }
