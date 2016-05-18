@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
     console.log('settings controller');
 })
 
-.controller('ShoppingCart', function($scope)
+.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner)
 {
   /**
    * Hier moet de JSON van de producten in,
@@ -49,4 +49,16 @@ angular.module('starter.controllers', [])
   ];
   
   console.log("kaas");
+
+  $scope.scanBarcode = function()
+  {
+    console.log('clicked');
+      $cordovaBarcodeScanner.scan().then(function(imageData) {
+          alert(imageData.text);
+          console.log("Barcode Format -> " + imageData.format);
+          console.log("Cancelled -> " + imageData.cancelled);
+      }, function(error) {
+          console.log("An error happened -> " + error);
+      });
+  };  
 })
