@@ -27,15 +27,15 @@ angular.module('starter.controllers', [])
 .controller('Settings', function($scope)
 {
     $scope.settings = {
-      // You have no friends.
-       enableFriends: true
+      // Thuisbezorgen toggle
+       enableFriends: false
     };    
     
     // javascrrrrrript hierrrrrr
     console.log('settings controller');
 })
 
-.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, Products)
+.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
 {
   /**
    * Hier moet de JSON van de producten in,
@@ -123,20 +123,8 @@ angular.module('starter.controllers', [])
 
   $scope.addFavorite = function(product){
       Products.addToFavorites(product);
+      $ionicListDelegate.closeOptionButtons();
   }  
-
-  // Verwijder product uit de winkelmand.
-  // $scope.removeProduct = function (item)
-  // {
-  //     for (var i = 0; i <   $scope.products.length; i++) {
-  //         if(item.title == $scope.products[i].title)
-  //         {
-  //           $scope.products.splice(i,1);
-  //           $scope.$apply;          
-  //         }
-  //     }
-  //     $scope.calculateData();
-  // }
   
   $scope.scanBarcode = function()
   {

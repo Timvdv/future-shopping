@@ -171,6 +171,7 @@ i.ion-ios-trash {
     left: 15px;
 }
 
+<<<<<<< HEAD
 .productDetail .list img {
     width: 100%;
     height: 200px;
@@ -192,4 +193,9 @@ i.ion-ios-trash {
 
 span.bold{
     font-weight: 600;
+}
+
+.hide
+{
+    display: none;
 }
