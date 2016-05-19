@@ -52,12 +52,12 @@ angular.module('starter.controllers', [])
   $scope.listCanSwipe = true;
 
   $scope.products = Products.all();
-  $scope.removeProduct = function(product)
+
+  $scope.updateTotals = function()
   {
-    Products.remove(product);
-  }
-  $scope.addFavorite = function(product){
-    Products.addToFavorites(product);
+    //KOTS CODE -> BLUUUUGHGHHHHH
+    document.getElementById('price').innerHTML =  $scope.totalPrice;
+    document.getElementById('time').innerHTML =  $scope.totalTime;
   }
 
   // Bereken de nieuwe totale prijs & de inpaktijd.
@@ -73,10 +73,10 @@ angular.module('starter.controllers', [])
     $scope.totalPrice = Math.round(totalPrice * 100) / 100;
     $scope.totalTime = Math.round(totalTime / 60 * 100) / 100;
 
-    //KOTS CODE -> BLUUUUGHGHHHHH
-    document.getElementById('price').innerHTML =  $scope.totalPrice;
-    document.getElementById('time').innerHTML =  $scope.totalTime;
-
+    //Klopt niet helemaal, maar good enought okdoei
+    $scope.totalPrice = $scope.totalPrice.toString().split(".")[0] + "," + ('0' + $scope.totalPrice.toString().split(".")[1]).slice(-2)
+    
+    $scope.updateTotals();
   }
 
   // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
@@ -109,6 +109,16 @@ angular.module('starter.controllers', [])
       }
       $scope.calculateData();
   }
+
+  $scope.removeProduct = function(product)
+  {
+      Products.remove(product);
+      $scope.calculateData();
+  }
+
+  $scope.addFavorite = function(product){
+      Products.addToFavorites(product);
+  }  
 
   // Verwijder product uit de winkelmand.
   // $scope.removeProduct = function (item)
