@@ -53,13 +53,6 @@ angular.module('starter.controllers', [])
   $scope.listCanSwipe = true;
 
   $scope.products = Products.all();
-  $scope.removeProduct = function(product)
-  {
-    Products.remove(product);
-  }
-  $scope.addFavorite = function(product){
-    Products.addToFavorites(product);
-  }
 
   $scope.updateTotals = function()
   {
@@ -117,6 +110,16 @@ angular.module('starter.controllers', [])
       }
       $scope.calculateData();
   }
+
+  $scope.removeProduct = function(product)
+  {
+      Products.remove(product);
+      $scope.calculateData();
+  }
+
+  $scope.addFavorite = function(product){
+      Products.addToFavorites(product);
+  }  
 
   // Verwijder product uit de winkelmand.
   // $scope.removeProduct = function (item)
