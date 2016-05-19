@@ -8,16 +8,20 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  console.log("Favorite Controller.");
+
   $scope.favorites = Products.getFavorites();
-  console.log($scope.favorites);
   $scope.remove = function(fav) {
     Products.removeFavorite(fav);
   };
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Products) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  $scope.product = Products.getByID($stateParams.chatId);
+
+  $scope.settings = {
+    aanbieding: true,
+    proximity: false
+  };
 })
 
 .controller('Settings', function($scope)
@@ -31,7 +35,7 @@ angular.module('starter.controllers', [])
     console.log('settings controller');
 })
 
-.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, Products)
+.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
 {
   /**
    * Hier moet de JSON van de producten in,
@@ -53,13 +57,6 @@ angular.module('starter.controllers', [])
   $scope.listCanSwipe = true;
 
   $scope.products = Products.all();
-  $scope.removeProduct = function(product)
-  {
-    Products.remove(product);
-  }
-  $scope.addFavorite = function(product){
-    Products.addToFavorites(product);
-  }
 
   $scope.updateTotals = function()
   {
@@ -118,18 +115,16 @@ angular.module('starter.controllers', [])
       $scope.calculateData();
   }
 
-  // Verwijder product uit de winkelmand.
-  // $scope.removeProduct = function (item)
-  // {
-  //     for (var i = 0; i <   $scope.products.length; i++) {
-  //         if(item.title == $scope.products[i].title)
-  //         {
-  //           $scope.products.splice(i,1);
-  //           $scope.$apply;          
-  //         }
-  //     }
-  //     $scope.calculateData();
-  // }
+  $scope.removeProduct = function(product)
+  {
+      Products.remove(product);
+      $scope.calculateData();
+  }
+
+  $scope.addFavorite = function(product){
+      Products.addToFavorites(product);
+      $ionicListDelegate.closeOptionButtons();
+  }  
   
   $scope.scanBarcode = function()
   {
