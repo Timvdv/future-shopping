@@ -8,16 +8,15 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  console.log("Favorite Controller.");
+
   $scope.favorites = Products.getFavorites();
-  console.log($scope.favorites);
   $scope.remove = function(fav) {
     Products.removeFavorite(fav);
   };
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Products) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  //$scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('Settings', function($scope)
