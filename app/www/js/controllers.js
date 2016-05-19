@@ -16,7 +16,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Products) {
-  //$scope.chat = Chats.get($stateParams.chatId);
+  $scope.product = Products.getByID($stateParams.chatId);
+
+  $scope.settings = {
+    aanbieding: true,
+    proximity: false
+  };
 })
 
 .controller('Settings', function($scope)
