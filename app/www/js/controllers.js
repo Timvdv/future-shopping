@@ -24,6 +24,14 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList) {
+  $scope.list = ShoppingList.all();
+  $scope.remove = function(item) {
+    ShoppingList.remove(item);
+  }
+})
+
+
 .controller('Settings', function($scope)
 {
     $scope.settings = {

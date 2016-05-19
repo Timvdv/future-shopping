@@ -48,6 +48,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
+  .state('tab.list', {
+    url: '/list',
+    views: {
+      'tab-list': {
+        templateUrl: 'templates/shopping-list.html',
+        controller: 'ShoppingListCtrl'
+      }
+    }
+  })
+
+  .state('tab.list-add', {
+    url: '/list/add',
+    views: {
+      'tab-list': {
+        templateUrl: 'templates/list-add.html',
+        controller: 'ShoppingListCtrl'
+      }
+    }
+  })
+
   .state('tab.chats', {
       url: '/chats',
       views: {
