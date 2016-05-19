@@ -4,12 +4,14 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{product.title}}" hide-nav-bar="false">
-  <ion-content class="padding">
+<ion-view view-title="" hide-nav-bar="false">
+  <ion-content class="padding productDetail">
     <div class="list">
-      <img ng-src="{{product.thumbnail}}" style="width: 50%;">
-      <p>
-        <h3>{{product.inhoud}}</h3>
+      <h3 class="alignCenter">{{product.title}}</h3>
+      <img ng-src="{{product.thumbnail}}">
+      <h4>Prijs: <span class="bold">{{product.prijsFrontEnd}}</span></h4>
+      <h4>Gewicht: <span class="bold">{{product.inhoud}}</span></h4>
+      <p><span class="bold">Omschrijving:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil consectetur dolorum, excepturi ipsum quaerat accusantium maiores quisquam, corporis delectus possimus illum porro error, temporibus labore ipsam quidem aut sit.
       </p>
     </div>
     <ion-list>
