@@ -170,3 +170,8 @@ i.ion-ios-trash {
 .totalPrice {
     left: 15px;
 }
+
+.hide
+{
+    display: none;
+}

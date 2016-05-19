@@ -23,8 +23,8 @@ angular.module('starter.controllers', [])
 .controller('Settings', function($scope)
 {
     $scope.settings = {
-      // You have no friends.
-       enableFriends: true
+      // Thuisbezorgen toggle
+       enableFriends: false
     };    
     
     // javascrrrrrript hierrrrrr
