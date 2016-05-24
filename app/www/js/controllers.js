@@ -1,5 +1,14 @@
-angular.module('starter.controllers', [])
-
+angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
+.directive('noScroll', function() {
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attr) {
+            $element.on('touchmove', function(e) {
+                e.preventDefault();
+            });
+        }
+    }
+})
 .controller('ChatsCtrl', function($scope, Products) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -138,3 +147,36 @@ angular.module('starter.controllers', [])
       });
   };
 })
+
+.controller('Cards', function($scope) {
+    var cardTypes = [
+        { image: 'img/goudakaas.JPG', title: 'So much grass #hippster'},
+        { image: 'img/goudakaas.JPG', title: 'Way too much Sand, right?'},
+        { image: 'img/goudakaas.JPG', title: 'Beautiful sky from wherever'},
+    ];
+ 
+  console.log('ahoy')
+
+    $scope.cards = [];
+ 
+    $scope.addCard = function(i) {
+        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+        newCard.id = Math.random();
+        $scope.cards.push(angular.extend({}, newCard));
+    }
+ 
+    for(var i = 0; i < 3; i++) $scope.addCard();
+ 
+    $scope.cardSwipedLeft = function(index) {
+        console.log('Left swipe');
+    }
+ 
+    $scope.cardSwipedRight = function(index) {
+        console.log('Right swipe');
+    }
+ 
+    $scope.cardDestroyed = function(index) {
+        $scope.cards.splice(index, 1);
+        console.log('Card removed');
+    }
+});

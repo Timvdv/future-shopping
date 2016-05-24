@@ -1,5 +1,19 @@
 <ion-view view-title="Shopping cart" hide-nav-bar="true">
      <ion-content>
+         <td-cards>
+              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+              on-partial-swipe="cardPartialSwipe(amt)">
+                  <div class="title">
+                      {{card.title}}
+                  </div>
+                  <div class="image">
+                      <div class="no-text overlayBox"><div class="noBox boxed">Trash</div></div>
+                      <img ng-src="{{card.image}}">
+                      <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Save</div></div>
+                  </div>
+              </td-card>
+          </td-cards>
        <div class="list products">
        <ion-list ng-controller="ShoppingCart"
           show-delete="shouldShowDelete"
