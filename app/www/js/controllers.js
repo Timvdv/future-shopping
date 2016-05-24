@@ -33,6 +33,14 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
+.controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList) {
+  $scope.list = ShoppingList.all();
+  $scope.remove = function(item) {
+    ShoppingList.remove(item);
+  }
+})
+
+
 .controller('Settings', function($scope)
 {
     $scope.settings = {
