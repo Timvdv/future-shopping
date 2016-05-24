@@ -114,10 +114,10 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var shoppingList = [
-    {title: "Gouda Kaas 48+", aantal: 1}, 
-    {title: "Quaker Havermout", aantal: 2}, 
-    { title: "Calvé Pindakaas", aantal: 1}, 
-    { title: "AH Frambozenvla", aantal: 1}
+    {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
+    {title: "Quaker Havermout", aantal: 2, checked: false}, 
+    {title: "Calvé Pindakaas", aantal: 1, checked: true}, 
+    {title: "AH Frambozenvla", aantal: 1, checked: false}
   ];
 
   return {
@@ -137,9 +137,12 @@ angular.module('starter.services', [])
       return null;
     },
     add: function(li) {
-      if(shoppingList.indexOf(product)) {
+      if(shoppingList.indexOf(li))  {
         shoppingList.push(li); 
-      } 
+      }
+      else{
+        shoppingList[shoppingList.indexOf(li)].aantal += 1;
+      }
     }
   };
 });

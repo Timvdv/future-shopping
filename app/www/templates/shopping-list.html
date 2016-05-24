@@ -3,16 +3,17 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in list" type="item-text-wrap">
         <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+        
 
         <ion-option-button class="button-assertive" ng-click="remove(item)">
           Delete
         </ion-option-button>
       </ion-item>
+      
 
-      <button class="button button-full button-positive" href="#tab/list/add">
+      <a class="button button-full button-positive" href="#tab/list/add">
         Voeg producten toe
-      </button>
+      </a>
     </ion-list>
   </ion-content>
 </ion-view>
