@@ -40,6 +40,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 
   $scope.add = function($event)
+  {
     var name = document.getElementById("productInput");
     var aantal = document.getElementById("aantalInput");
     if(name.value != "" && aantal.value != "Kies aantal")
