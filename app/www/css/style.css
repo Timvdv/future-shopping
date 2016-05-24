@@ -144,7 +144,7 @@ html, body {
     top:0;
 }
 
-i.ion-ios-heart {
+.list.products i.ion-ios-heart {
     font-size: 30px;
     position: absolute;
     top: 50%;
@@ -152,7 +152,7 @@ i.ion-ios-heart {
     transform: translateY(50%) translateX(-50%);
 }
 
-i.ion-ios-trash {
+.list.products i.ion-ios-trash {
     font-size: 30px;
     position: absolute;
     top: 50%;
