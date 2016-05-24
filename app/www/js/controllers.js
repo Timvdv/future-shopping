@@ -39,7 +39,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     ShoppingList.remove(item);
   };
 
-  $scope.add = function(){
+  $scope.add = function(e){
+    console.log(e);
     var name = document.getElementById("productInput");
     var aantal = document.getElementById("aantalInput");
     if(name.value != "" && aantal.value != "Kies aantal")
