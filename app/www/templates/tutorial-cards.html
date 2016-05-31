@@ -1,6 +1,6 @@
-<ion-view view-title="Tutorial" hide-nav-bar="false" no-scroll>
+<ion-view view-title="Tutorial" hide-nav-bar="true" no-scroll>
   <ion-content>
-    <ion-slide-box class="slideContainer" on-slide-changed="slideHasChanged($index)">
+    <ion-slide-box class="slideContainer">
       <ion-slide class="slideBox" ng-repeat="card in cards">
         <div class="slideTitle">
           {{card.title}}

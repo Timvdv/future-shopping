@@ -219,7 +219,7 @@ span.bold{
     padding: 5px 10px;
 }
 
-.slideContainer {
+.slideContainer.slider {
     height: 95%;
 }
 
@@ -230,7 +230,7 @@ span.bold{
 .slideBox .slideTitle {
     font-size: 20px;
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 35px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -247,5 +247,5 @@ span.bold{
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 35px;
 }

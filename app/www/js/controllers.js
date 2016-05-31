@@ -237,7 +237,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .controller('Cards', function($scope) {
     var cardTypes = [
-        { image: '../resources/ios/icon/icon-40.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. Korte tutorial etc. etc. etc.'},
+        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. Korte tutorial etc. etc. etc.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 1', content: 'Shopping cart is leeg ga producten scannen. Druk op de camera.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 2', content: 'Meer info nodig over een product? Swipe naar links.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
