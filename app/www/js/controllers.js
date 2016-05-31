@@ -211,18 +211,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.addFavorite = function(product){
       Products.addToFavorites(product);
       $ionicListDelegate.closeOptionButtons();
-  }  
-  
+  }
+
+  $scope.currentlyScanning = false;
+
   $scope.scanBarcode = function()
   {
-    console.log('clicked');
-      $cordovaBarcodeScanner.scan().then(function(imageData) {
-          alert(imageData.text);
-          console.log("Barcode Format -> " + imageData.format);
-          console.log("Cancelled -> " + imageData.cancelled);
-      }, function(error) {
-          console.log("An error happened -> " + error);
-      });
+    if(!$scope.currentlyScanning)
+    {
+        $cordovaBarcodeScanner.scan().then(function(imageData)
+        {
+            $scope.currentlyScanning = false;
+            
+            alert(imageData.text);
+            
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error)
+        {
+            console.log("An error happened -> " + error);
+        });
+    }
   };
 })
 
@@ -233,7 +242,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         { image: 'img/goudakaas.JPG', title: 'Beautiful sky from wherever'},
     ];
  
-  console.log('ahoy')
+  console.log('ahoy');
 
     $scope.cards = [];
  
