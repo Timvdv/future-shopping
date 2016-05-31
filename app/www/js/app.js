@@ -74,23 +74,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.favorites', {
+      url: '/favorites',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-favorites': {
+          templateUrl: 'templates/tab-favorites.html',
+          controller: 'FavoritesCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
+    .state('product-detail', {
+      url: '/product/:productId',
+      templateUrl: 'templates/product-detail.html',
+      controller: 'ProductDetailCtrl'
     })
 
   .state('tab.account', {

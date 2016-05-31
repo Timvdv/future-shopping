@@ -9,7 +9,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         }
     }
 })
-.controller('ChatsCtrl', function($scope, Products) {
+.controller('FavoritesCtrl', function($scope, Products) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -24,9 +24,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Products) {
-  $scope.product = Products.getByID($stateParams.chatId);
-
+.controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
+  $scope.product = Products.getByID($stateParams.productId);
+  console.log("hoi");
   $scope.settings = {
     aanbieding: true,
     proximity: false

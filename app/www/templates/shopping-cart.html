@@ -19,10 +19,10 @@
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
-          <ion-item class="item item-thumbnail-top" href="#" ng-repeat="item in products">
+          <ion-item class="item item-thumbnail-top"  ng-repeat="item in products">
            <h2 class="center">{{item.title}}</h2>
            <p class="center">€ {{item.prijsFrontEnd}}</p>
-           <img class="center" src={{item.thumbnail}}>
+           <a href="#/product/{{item.id}}"><img class="center" src={{item.thumbnail}}></a>
            <div class="productValue">
                <i class="icon ion-ios-minus" ng-click="decreaseQuantity(item)"></i>
                <label class="item item-input">
