@@ -1,7 +1,7 @@
 <ion-view view-title="Favorites" hide-nav-bar="true">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="fav in favorites" type="item-text-wrap" href="#/tab/chats/{{fav.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="fav in favorites" type="item-text-wrap" href="#/product/{{fav.id}}">
         <img ng-src="{{fav.thumbnail}}"/>
         <h2>{{fav.title}}</h2>
         <p>{{fav.inhoud}}</p>
@@ -14,3 +14,4 @@
     </ion-list>
   </ion-content>
 </ion-view>
+
