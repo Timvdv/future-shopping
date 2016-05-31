@@ -1,11 +1,14 @@
 <ion-view view-title="Setup cards" hide-nav-bar="true" no-scroll>
      <ion-content>
          <td-cards>
-              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
-              on-partial-swipe="cardPartialSwipe(amt)">
+              <td-card id="td-card" ng-repeat="card in cards"
+                  on-destroy="cardDestroyed($index)"
+                  on-swipe-left="cardSwipedLeft($index)"
+                  on-swipe-right="cardSwipedRight($index)"
+                  on-partial-swipe="cardPartialSwipe(amt)">
                   <div class="title">
                       {{card.title}}
+                      hallo
                   </div>
                   <div class="image">
                       <div class="no-text overlayBox"><div class="noBox boxed">Trash</div></div>
