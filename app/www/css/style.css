@@ -37,6 +37,10 @@ html, body {
     border-bottom: 1px solid #979797;
 }
 
+.list.products .item-complex .item-content {
+    padding: 15px;
+}
+
 .list.products a.item-content {
     padding: 15px;
 }
@@ -213,4 +217,35 @@ span.bold{
     font-size: 14px;
     font-weight: 600;
     padding: 5px 10px;
+}
+
+.slideContainer {
+    height: 95%;
+}
+
+.slideBox {
+    padding-top: 25px;
+}
+
+.slideBox .slideTitle {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.slideBox img.slideImage {
+    height: 250px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.slideBox .slideContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    padding-top: 10px;
 }
