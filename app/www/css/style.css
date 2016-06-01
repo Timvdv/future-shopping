@@ -223,7 +223,7 @@ span.bold{
 }
 
 .slideContainer.slider {
-    height: 100vh;
+    height: 100%;
 }
 
 .slideBox {
