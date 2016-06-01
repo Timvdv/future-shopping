@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }) 
   .state('addData', {
       url: '/data',
-      templateUrl: 'templates/shopping-cart.html',
+      templateUrl: 'templates/data.html',
       controller: "AddDataCtlr"
     })
 
@@ -94,14 +94,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'ProductDetailCtrl'
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.settings', {
+    url: '/settings',
     views: {
-      'tab-account': {
+      'tab-settings': {
         templateUrl: 'templates/settings.html',
-        controller: 'Settings'
+        controller: 'settings'
       }
     }
+  })
+
+  .state('settings-user', {
+    url: '/usersettings',
+    templateUrl: 'templates/user-settings.html',
+    controller: 'UserSettings'
   });
 
   // if none of the above states are matched, use this as the fallback

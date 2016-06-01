@@ -24,6 +24,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
+
+
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
   $scope.product = Products.getByID($stateParams.productId);
   console.log("hoi");
@@ -34,6 +36,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 })
 
 .controller('AddDataCtlr', function($scope, $stateParams, $location, $state) {
+<<<<<<< HEAD
   console.log("Added product data to localStorage.");
   localStorage.clear();
   var products = [
@@ -66,6 +69,50 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   console.log(JSON.parse(localStorage["products"]));
   //window.location.reload(true);  
   $location.path('#/tab/dash');
+=======
+  console.log("Data controller.");
+
+  $scope.clearDB = function() {
+    console.log("Database has been wiped.")
+    localStorage.clear();
+  };
+  $scope.fillDB = function() {
+    console.log("Database has been filled.")
+    localStorage.clear();
+    var products = [
+      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+      { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+      { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+      { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
+      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+      { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
+      { id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
+    ];
+
+    var favorites = [
+      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+      { id: 2,title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+      { id: 3,title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15}
+    ];
+
+    var shoppingList = [
+      {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
+      {title: "Quaker Havermout", aantal: 2, checked: false}, 
+      {title: "Calvé Pindakaas", aantal: 1, checked: true}, 
+      {title: "AH Frambozenvla", aantal: 1, checked: false}
+    ];
+
+    localStorage["products"] = JSON.stringify(products);
+    localStorage["favorites"] = JSON.stringify(favorites);
+    localStorage["shoppingList"] = JSON.stringify(shoppingList);
+
+    console.log(JSON.parse(localStorage["products"]));
+    //window.location.reload(true);  
+    $location.path('#/tab/dash');
+  };
+  
+>>>>>>> 44572c37f2c95965928f9fdc033fc6b036da1071
 })
 
 .controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList, $ionicPopup, $timeout) {
@@ -144,13 +191,21 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 })
 
 
-.controller('Settings', function($scope)
+
+.controller('settings', function($scope, $stateParams, Products) 
+{
+  console.log("settings controller.")
+})
+
+.controller('UserSettings', function($scope)
 {
     $scope.settings = {
       // Thuisbezorgen toggle
        enableFriends: false
     };    
 })
+
+
 
 .controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
 {
@@ -262,9 +317,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('Cards', function($scope) {
+.controller('Cards', function($scope, $ionicSlideBoxDelegate) {
     var cardTypes = [
-        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. Korte tutorial etc. etc. etc.'},
+        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
         { image: 'img/goudakaas.JPG', title: 'Stap 1', content: 'Shopping cart is leeg ga producten scannen. Druk op de camera.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 2', content: 'Meer info nodig over een product? Swipe naar links.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
@@ -280,6 +335,18 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         newCard.id = i;
         $scope.cards.push(angular.extend({}, newCard));
     }
+
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    }
+
+    $scope.previousSlide = function() {
+      $ionicSlideBoxDelegate.previous();
+    }
+
+    $scope.disableSwipe = function() {
+       $ionicSlideBoxDelegate.enableSlide(false);
+    };
  
     for(var i = 0; i < 5; i++) $scope.addCard(i);
  
@@ -295,5 +362,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         $scope.cards.splice(index, 1);
         console.log('Card removed');
     }
+
+  $scope.shouldShowDelete = false;
+  $scope.shouldShowReorder = false;
+  $scope.listCanSwipe = true;
 
 });

@@ -1,13 +1,81 @@
 <ion-view view-title="Tutorial" hide-nav-bar="true" no-scroll>
-  <ion-content>
-    <ion-slide-box class="slideContainer">
-      <ion-slide class="slideBox" ng-repeat="card in cards">
+  <ion-content class="tutorial">
+    <ion-slide-box class="slideContainer" ng-init="disableSwipe()">
+      <ion-slide class="slideBox">
         <div class="slideTitle">
-          {{card.title}}
+          Tutorial
         </div>
-        <img class="slideImage" ng-src="{{card.image}}">
+        <img class="slideImage" ng-src="../resources/android/icon/drawable-xxxhdpi-icon.png">
         <div class="slideContent">
-          {{card.content}}
+          Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>        
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 1
+        </div>
+        <i class="ion-ios-camera-outline" ng-click="scanBarcode()"></i>
+        <div class="slideContent">
+          Shopping cart is leeg ga producten scannen. Druk op de camera.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>          
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 2
+        </div>
+        <div class="list product">
+        <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+          <ion-item class="item item-thumbnail-top">
+           <h2 class="center">Gouda Kaas</h2>
+           <p class="center">€ 2,50</p>
+           <a href="#"><img class="center" src="img/goudakaas.JPG"></a> 
+          <ion-option-button class="button-energized" ng-click="addFavorite(item)">
+              <i class="ion-ios-heart"></i>Favorite 
+          </ion-option-button>   
+          <ion-option-button class="button-assertive" ng-click="removeProduct(item)">
+              <i class="ion-ios-trash"></i>Delete
+          </ion-option-button>      
+        </ion-item>
+        </ion-list>
+        </div>
+        <div class="slideContent">
+          Meer info nodig over een product? Swipe naar links. Probeer het maar!
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 3
+        </div>
+        <i class="icon ion-ios-list"></i>
+        <div class="slideContent">
+          Voor het vullen van uw boodschappenlijst, kunt u klikken op het boodschappenlijstje.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 4
+        </div>
+        <i class="icon ion-ios-gear-outline"></i>
+        <div class="slideContent">
+          Op de instellingen pagina, kunt u uw gegevens invullen. Hier kan u uw NAW-gegevens achter laten, zodat uw boodschappen thuisbezorgd kunnen worden.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
         </div>
       </ion-slide>
     </ion-slide-box>
