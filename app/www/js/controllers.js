@@ -237,9 +237,11 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .controller('Cards', function($scope) {
     var cardTypes = [
-        { image: 'img/goudakaas.JPG', title: 'So much grass #hippster'},
-        { image: 'img/goudakaas.JPG', title: 'Way too much Sand, right?'},
-        { image: 'img/goudakaas.JPG', title: 'Beautiful sky from wherever'},
+        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. Korte tutorial etc. etc. etc.'},
+        { image: 'img/goudakaas.JPG', title: 'Stap 1', content: 'Shopping cart is leeg ga producten scannen. Druk op de camera.'},
+        { image: 'img/goudakaas.JPG', title: 'Stap 2', content: 'Meer info nodig over een product? Swipe naar links.'},
+        { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
+        { image: 'img/goudakaas.JPG', title: 'Stap 4', content: 'Er kunnen instellingen gevuld worden voor het afrekenen, Thuisbezorgen etc. etc. etc.'},
     ];
  
   console.log('ahoy');
@@ -247,12 +249,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     $scope.cards = [];
  
     $scope.addCard = function(i) {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        newCard.id = Math.random();
+        var newCard = cardTypes[i];
+        newCard.id = i;
         $scope.cards.push(angular.extend({}, newCard));
     }
  
-    for(var i = 0; i < 3; i++) $scope.addCard();
+    for(var i = 0; i < 5; i++) $scope.addCard(i);
  
     $scope.cardSwipedLeft = function(index) {
         console.log('Left swipe');
@@ -266,4 +268,5 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         $scope.cards.splice(index, 1);
         console.log('Card removed');
     }
+
 });
