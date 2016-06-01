@@ -58,12 +58,12 @@ angular.module('starter.services', [])
 
    if(localStorage["products"])
    {
-        JSON.parse(localStorage["products"]);
+        products = JSON.parse(localStorage["products"]);
    }
 
    if(localStorage["favorites"])
    {
-        JSON.parse(localStorage["favorites"]);  
+        products = JSON.parse(localStorage["favorites"]);  
    }
 
   return {
