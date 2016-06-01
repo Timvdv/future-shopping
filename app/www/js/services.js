@@ -53,7 +53,7 @@ angular.module('starter.services', [])
 {
   // Some fake testing data
   var products = [], 
-         favorites = []
+         favorites = [];
 
    if(localStorage["products"])
    {
