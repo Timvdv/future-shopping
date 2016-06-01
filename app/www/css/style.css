@@ -220,7 +220,7 @@ span.bold{
 }
 
 .slideContainer.slider {
-    height: 95%;
+    height: 100vh;
 }
 
 .slideBox {
@@ -248,4 +248,8 @@ span.bold{
     padding-right: 10px;
     text-align: center;
     padding-top: 35px;
+}
+
+.button.back-button.hide.buttons.button-clear.header-item {
+    display: block;
 }
