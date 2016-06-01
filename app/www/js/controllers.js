@@ -258,7 +258,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
   $scope.addProduct = function(data)
   {
-      Products.add(JSON.parse(data));      
+      alert(data);
+      Products.addQR(data);
   }
 
   $scope.currentlyScanning = false;
@@ -268,12 +269,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.scanBarcode = function()
   {
     //debug add product
-    //$scope.addProduct(pr_string);
+    //Products.addQR(pr_string);
 
     if(!$scope.currentlyScanning)
     {
         $scope.currentlyScanning = true;
-        
+
         $cordovaBarcodeScanner.scan().then(function(imageData)
         {
             $scope.currentlyScanning = false;
