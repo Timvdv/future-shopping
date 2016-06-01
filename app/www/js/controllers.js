@@ -152,25 +152,10 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
       // Thuisbezorgen toggle
        enableFriends: false
     };    
-    
-    // javascrrrrrript hierrrrrr
-    console.log('settings controller');
 })
 
 .controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
 {
-  /**
-   * Hier moet de JSON van de producten in,
-   * deze moet vervolgens verwerkt worden in de HTML
-   * SVEN ? Vind ik wel een leuk klusje voor jou. BEstand staat
-   * al gekoppeld.
-   *
-   * Als je heel veel zin hebt om te TRYHARDEN kijk eens hoe je die producten
-   * kan verwerken in een facory (net zoals bij chats gedaan is) dit is namelijk wel een
-   * mooie usecase voor een factory (services.js en tab-chats + check de routes file)
-   */
-
-
   // Heb de prijs even 2 keer toegevoegd, omdat integers bij de front end worden afgerond en hoef op
   // deze manier later geen eventuele regexes toe te passen. :)
 
@@ -258,7 +243,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         {
             $scope.currentlyScanning = false;
             
-            alert(imageData.text);
+            setTimeout(function() {
+              alert(imageData.text);
+            }, 0);            
             
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
