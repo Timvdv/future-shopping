@@ -386,3 +386,7 @@ button.button.button-stable.next {
     right: 10px;
     position: fixed;
 }
+
+ion-content.tutorial {
+    top: 0;
+}
