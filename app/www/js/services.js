@@ -67,7 +67,7 @@ angular.module('starter.services', [])
       localStorage["products"] = JSON.stringify(products);
     },
     get: function(product) {
-      for (var i = 0; i < chats.length; i++) {
+      for (var i = 0; i < chats.length-1; i++) {
         if(products.indexOf(product))
         {
           console.log(products[products.indexOf(product)]);
