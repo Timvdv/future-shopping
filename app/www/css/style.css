@@ -390,3 +390,7 @@ body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
 ion-content.tutorial {
     top: 0;
 }
+
+.title.title-left.header-item {
+    text-align: center;
+}
