@@ -35,9 +35,22 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .controller('AddDataCtlr', function($scope, $stateParams, $location, $state)
 {
+  $scope.dbStatus = localStorage["dbStatus"];
+  if(localStorage["products"] || localStorage["favorites"])
+  {
+    localStorage["dbStatus"] = "Bevat data.";
+  }else
+  {
+    localStorage["dbStatus"] = "Bevat geen data.";
+  }
+
+
+
   $scope.clearDB = function() {
     console.log("Database has been wiped.")
     localStorage.clear();
+    localStorage["dbStatus"] = "Bevat geen data.";
+    window.location.reload(true);
   };
   $scope.fillDB = function() {
     console.log("Database has been filled.")
@@ -70,8 +83,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     localStorage["shoppingList"] = JSON.stringify(shoppingList);
 
     console.log(JSON.parse(localStorage["products"]));
-    //window.location.reload(true);  
-    $location.path('#/tab/dash');
+    localStorage["dbStatus"] = "Bevat data.";
+    window.location.reload(true);  
+    //$location.path('#/tab/dash');
   };
 })
 
