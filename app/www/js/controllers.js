@@ -64,7 +64,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   localStorage["favorites"] = JSON.stringify(favorites);
   localStorage["shoppingList"] = JSON.stringify(shoppingList);
 
-  window.location.reload(true);  
+  console.log(JSON.parse(localStorage["products"]));
+  //window.location.reload(true);  
   $location.path('#/tab/dash');
 })
 
