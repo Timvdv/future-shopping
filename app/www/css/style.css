@@ -377,12 +377,12 @@ body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
     width: 100%;
 }
 
-button.button.button-stable.prev {
+.button.button-stable.prev {
     left: 10px;
     position: fixed;
 }
 
-button.button.button-stable.next {
+.button.button-stable.next {
     right: 10px;
     position: fixed;
 }
