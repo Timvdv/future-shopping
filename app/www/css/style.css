@@ -3,6 +3,16 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
+body.platform-ios.platform-cordova:not(.fullscreen) {
+    margin-top: 20px;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .has-tabs,
+body.platform-ios.platform-cordova:not(.fullscreen) .bar-footer.has-tabs
+{
+    bottom: 20;
+}
+
 /* Product css */
 .list.products .list {
     display: flex;
@@ -16,7 +26,6 @@ html, body {
 {
     bottom: 0;
 }
-
 
 .list.products .item.item-thumbnail-top {
     width: 50%;
@@ -35,6 +44,10 @@ html, body {
     border-top: none;
     border-right: 1px solid #979797;
     border-bottom: 1px solid #979797;
+}
+
+.list.products .item-complex .item-content {
+    padding: 15px !important;
 }
 
 .list.products a.item-content {
@@ -213,4 +226,35 @@ span.bold{
     font-size: 14px;
     font-weight: 600;
     padding: 5px 10px;
+}
+
+.slideContainer.slider {
+    height: 95%;
+}
+
+.slideBox {
+    padding-top: 25px;
+}
+
+.slideBox .slideTitle {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.slideBox img.slideImage {
+    height: 250px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.slideBox .slideContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    padding-top: 35px;
 }
