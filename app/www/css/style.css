@@ -250,6 +250,8 @@ span.bold{
     display: block;
     width: 100%;
     object-fit: contain;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .slideBox .slideContent {
@@ -261,4 +263,121 @@ span.bold{
 
 .button.back-button.hide.buttons.button-clear.header-item {
     display: block;
+}
+
+.slider-pager {
+    display: none;
+}
+
+.slideBox .ion-ios-camera-outline {
+    font-size: 100px;
+    background: #ff6868;
+    border: 5px solid #ff9e9e;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin: 0px auto 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: #fff;
+}
+
+.slideBox .icon.ion-ios-list, .slideBox .icon.ion-ios-gear-outline {
+    font-size: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    margin: 0px auto 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: #387ef5;
+}
+
+.list.product {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.list.product .list {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.list.product .item-complex .item-content {
+    padding: 15px !important;
+}
+
+.list.product a.item-content {
+    padding: 15px;
+}
+
+.list.product .item.item-thumbnail-top .slider-pager {
+    display: none;
+}
+
+.list.product .item.item-thumbnail-top h2.center, .list.products .item.item-thumbnail-top p.center {
+    text-align: center;
+}
+
+.list.product .item.item-thumbnail-top h2.center {
+    font-size: 16px;
+    color: #525252;
+    margin-bottom: 10px;
+}
+
+.list.product .item.item-thumbnail-top p.center {
+    font-size: 22px;
+    color: #000000;
+    overflow: visible;
+    text-align: center;
+}
+
+.list.product .item.item-thumbnail-top img.center {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.list.product .item-complex, a.item.item-complex, button.item.item-complex {
+    border: none;
+}
+
+.list.product i.ion-ios-heart {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.list.product i.ion-ios-trash {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.slideButtons {
+    padding: 0 10px;
+    position: fixed;
+    bottom: 60px;
+    width: 100%;
+}
+
+button.button.button-stable.prev {
+    left: 10px;
+    position: fixed;
+}
+
+button.button.button-stable.next {
+    right: 10px;
+    position: fixed;
 }

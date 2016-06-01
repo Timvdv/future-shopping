@@ -270,9 +270,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('Cards', function($scope) {
+.controller('Cards', function($scope, $ionicSlideBoxDelegate) {
     var cardTypes = [
-        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. Korte tutorial etc. etc. etc.'},
+        { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
         { image: 'img/goudakaas.JPG', title: 'Stap 1', content: 'Shopping cart is leeg ga producten scannen. Druk op de camera.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 2', content: 'Meer info nodig over een product? Swipe naar links.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
@@ -288,6 +288,18 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         newCard.id = i;
         $scope.cards.push(angular.extend({}, newCard));
     }
+
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    }
+
+    $scope.previousSlide = function() {
+      $ionicSlideBoxDelegate.previous();
+    }
+
+    $scope.disableSwipe = function() {
+       $ionicSlideBoxDelegate.enableSlide(false);
+    };
  
     for(var i = 0; i < 5; i++) $scope.addCard(i);
  
@@ -303,5 +315,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         $scope.cards.splice(index, 1);
         console.log('Card removed');
     }
+
+  $scope.shouldShowDelete = false;
+  $scope.shouldShowReorder = false;
+  $scope.listCanSwipe = true;
 
 });
