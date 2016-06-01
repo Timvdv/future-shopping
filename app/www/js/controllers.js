@@ -46,8 +46,6 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     $scope.dbStatus = localStorage["dbStatus"];
   }
 
-
-
   $scope.clearDB = function() {
     console.log("Database has been wiped.")
     localStorage.clear();
@@ -258,13 +256,19 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
       $ionicListDelegate.closeOptionButtons();
   }
 
+  $scope.addProduct = function(data)
+  {
+      Products.add(JSON.parse(data));      
+  }
+
   $scope.currentlyScanning = false;
 
   var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 });
 
   $scope.scanBarcode = function()
   {
-    //Products.add(JSON.parse(pr_string));
+    //debug add product
+    //$scope.addProduct(pr_string);
 
     if(!$scope.currentlyScanning)
     {
@@ -272,19 +276,13 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
         {
             $scope.currentlyScanning = false;
 
-            var product = JSON.parse(imageData.text);
-            Products.add(product);
-
-            $scope.calculateData();
-
             setTimeout(function()
             {
-                alert(imageData.text);
+                $scope.addProduct(imageData.text);
             }, 1);
             
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
-
         }, function(error)
         {
             console.log("An error happened -> " + error);
