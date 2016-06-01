@@ -38,7 +38,7 @@ html, body {
 }
 
 .list.products .item-complex .item-content {
-    padding: 15px;
+    padding: 15px !important;
 }
 
 .list.products a.item-content {
