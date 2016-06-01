@@ -62,7 +62,7 @@ angular.module('starter.services', [])
 
    if(localStorage["favorites"])
    {
-        products = JSON.parse(localStorage["favorites"]);  
+        favorites = JSON.parse(localStorage["favorites"]);  
    }
 
   return {
