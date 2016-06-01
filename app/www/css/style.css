@@ -3,14 +3,13 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
-body.platform-ios.platform-cordova:not(.fullscreen) {
-    margin-top: 20px;
+body.platform-ios.platform-cordova:not(.fullscreen) .tab-nav{
+    padding-top: 20px;
 }
 
-body.platform-ios.platform-cordova:not(.fullscreen) .has-tabs,
-body.platform-ios.platform-cordova:not(.fullscreen) .bar-footer.has-tabs
+body.platform-ios.platform-cordova:not(.fullscreen) .tabs
 {
-    bottom: 20;
+    height: 69px;
 }
 
 /* Product css */
@@ -147,11 +146,6 @@ body.platform-ios.platform-cordova:not(.fullscreen) .bar-footer.has-tabs
     left: 50%;
 }
 
-.list
-{
-    padding-top:50px;
-}
-
 .tab-nav
 {
     top:0;
@@ -257,4 +251,14 @@ span.bold{
     padding-right: 10px;
     text-align: center;
     padding-top: 35px;
+}
+
+.scroll-content
+{
+    top: 50px;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
+{
+    top:70px;    
 }
