@@ -1,66 +1,14 @@
-<ion-view view-title="Settings" hide-nav-bar="true">
+<ion-view view-title="Instellingen" hide-nav-bar="false">
   <ion-content>
-
-
     <ion-list>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Voornaam</span>
-        <input type="text" placeholder="John">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Achternaam</span>
-        <input type="text" placeholder="Doe">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="john@doe.com">
-      </label>
-      <div class="card">
-        <div class="item item-text-wrap">
-          Als u gebruik wilt maken van automatische incasso, vul dan hieronder uw rekeningnummer in.
-        </div>
-      </div>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Rekeningnummer</span>
-        <input type="text" placeholder="NLxx xxxx xxxx xxxx xx">
-      </label>
-
-      <ion-toggle  ng-model="settings.enableFriends">
-        Thuisbezorgen?
-      </ion-toggle>
-      <div ng-class="settings.enableFriends ? '' : 'hide'">
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Straatnaam</span>
-        <input type="text" placeholder="Wijnhaven">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Woonplaats</span>
-        <input type="text" placeholder="Rotterdam">
-      </label>
-
-      <div class="card">
-        <div class="item item-text-wrap">
-          Wanneer wilt u uw boodschappen in ontvangst nemen?
-        </div>
-      </div>
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Bezorgmoment
-        </div>
-        <select>
-          <option selected>Zo snel mogelijk</option>
-          <option>9:00 - 12:00</option>
-          <option>12:00 - 18:00</option>
-          <option>18:00 - 21:00</option>
-        </select>
-      </label>
-      </div>
-
+      <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap" href="#/usersettings">
+        <h2>Gebruikersinstellingen</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap" href="#/data">
+        <h2>Demo instellingen</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
     </ion-list>
-
-    <button class="button button-full button-positive">
-      Opslaan
-      </button
-
-    </ion-content>
-  </ion-view>
+  </ion-content>
+</ion-view>

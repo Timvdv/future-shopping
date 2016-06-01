@@ -49,7 +49,6 @@ angular.module('starter.services', [])
   };
 })
 
-
 .factory('Products', function() {
   // Might use a resource here that returns a JSON array
 
@@ -71,12 +70,24 @@ angular.module('starter.services', [])
     all: function() {
       return products;
     },
+    add: function(li) {
+      console.log(li);
+
+      if(products.indexOf(li))
+      {
+        products.push(li); 
+        localStorage["products"] = JSON.stringify(products);
+      }
+      else {
+        products[products.indexOf(li)].aantal += 1;
+      }
+    },
     remove: function(product) {
       products.splice(products.indexOf(product), 1);
       localStorage["products"] = JSON.stringify(products);
     },
     get: function(product) {
-      for (var i = 0; i < chats.length; i++) {
+      for (var i = 0; i < chats.length-1; i++) {
         if(products.indexOf(product))
         {
           console.log(products[products.indexOf(product)]);

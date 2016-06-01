@@ -24,6 +24,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
+
+
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
   $scope.product = Products.getByID($stateParams.productId);
   console.log("hoi");
@@ -34,6 +36,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 })
 
 .controller('AddDataCtlr', function($scope, $stateParams, $location, $state) {
+<<<<<<< HEAD
   console.log("Added product data to localStorage.");
   localStorage.clear();
   var products = [
@@ -43,8 +46,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
     { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
     { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
-    { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
-    { id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
+    { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 }
   ];
 
   var favorites = [
@@ -67,6 +69,50 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   console.log(JSON.parse(localStorage["products"]));
   //window.location.reload(true);  
   $location.path('#/tab/dash');
+=======
+  console.log("Data controller.");
+
+  $scope.clearDB = function() {
+    console.log("Database has been wiped.")
+    localStorage.clear();
+  };
+  $scope.fillDB = function() {
+    console.log("Database has been filled.")
+    localStorage.clear();
+    var products = [
+      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+      { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+      { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
+      { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
+      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+      { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
+      { id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
+    ];
+
+    var favorites = [
+      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
+      { id: 2,title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
+      { id: 3,title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15}
+    ];
+
+    var shoppingList = [
+      {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
+      {title: "Quaker Havermout", aantal: 2, checked: false}, 
+      {title: "Calvé Pindakaas", aantal: 1, checked: true}, 
+      {title: "AH Frambozenvla", aantal: 1, checked: false}
+    ];
+
+    localStorage["products"] = JSON.stringify(products);
+    localStorage["favorites"] = JSON.stringify(favorites);
+    localStorage["shoppingList"] = JSON.stringify(shoppingList);
+
+    console.log(JSON.parse(localStorage["products"]));
+    //window.location.reload(true);  
+    $location.path('#/tab/dash');
+  };
+  
+>>>>>>> 44572c37f2c95965928f9fdc033fc6b036da1071
 })
 
 .controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList, $ionicPopup, $timeout) {
@@ -142,18 +188,24 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
      console.log('Thank you for not eating my delicious ice cream cone');
    });
  };
-
-  
 })
 
 
-.controller('Settings', function($scope)
+
+.controller('settings', function($scope, $stateParams, Products) 
+{
+  console.log("settings controller.")
+})
+
+.controller('UserSettings', function($scope)
 {
     $scope.settings = {
       // Thuisbezorgen toggle
        enableFriends: false
     };    
 })
+
+
 
 .controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
 {
@@ -236,20 +288,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
   $scope.currentlyScanning = false;
 
+  //var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 });
+
   $scope.scanBarcode = function()
   {
+    //Products.add(JSON.parse(pr_string));
+
     if(!$scope.currentlyScanning)
     {
         $cordovaBarcodeScanner.scan().then(function(imageData)
         {
             $scope.currentlyScanning = false;
-            
-            setTimeout(function() {
-              alert(imageData.text);
-            }, 0);            
+
+            var product = JSON.parse(imageData.text);
+
+            Products.add(product);
+
+            $scope.calculateData();
             
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
+
         }, function(error)
         {
             console.log("An error happened -> " + error);
