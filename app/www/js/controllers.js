@@ -35,13 +35,15 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .controller('AddDataCtlr', function($scope, $stateParams, $location, $state)
 {
-  $scope.dbStatus = localStorage["dbStatus"];
+  
   if(localStorage["products"] || localStorage["favorites"])
   {
     localStorage["dbStatus"] = "Bevat data.";
+    $scope.dbStatus = localStorage["dbStatus"];
   }else
   {
     localStorage["dbStatus"] = "Bevat geen data.";
+    $scope.dbStatus = localStorage["dbStatus"];
   }
 
 
