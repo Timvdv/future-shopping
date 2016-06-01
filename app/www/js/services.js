@@ -54,9 +54,18 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
+  var products = [], 
+         favorites = []
 
-  var products = JSON.parse(localStorage["products"]); 
-  var favorites = JSON.parse(localStorage["favorites"]);  
+   if(localStorage["products"])
+   {
+        JSON.parse(localStorage["products"]);
+   }
+
+   if(localStorage["favorites"])
+   {
+        JSON.parse(localStorage["favorites"]);  
+   }
 
   return {
     all: function() {
