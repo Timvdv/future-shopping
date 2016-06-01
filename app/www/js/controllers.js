@@ -272,6 +272,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
     if(!$scope.currentlyScanning)
     {
+        $scope.currentlyScanning = true;
+        
         $cordovaBarcodeScanner.scan().then(function(imageData)
         {
             $scope.currentlyScanning = false;
