@@ -54,9 +54,18 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
+  var products = [], 
+         favorites = []
 
-  var products = JSON.parse(localStorage["products"]); 
-  var favorites = JSON.parse(localStorage["favorites"]);  
+   if(localStorage["products"])
+   {
+        JSON.parse(localStorage["products"]);
+   }
+
+   if(localStorage["favorites"])
+   {
+        JSON.parse(localStorage["favorites"]);  
+   }
 
   return {
     all: function() {
@@ -70,6 +79,7 @@ angular.module('starter.services', [])
       for (var i = 0; i < chats.length; i++) {
         if(products.indexOf(product))
         {
+          console.log(products[products.indexOf(product)]);
           return products[products.indexOf(product)];
         }
       }
@@ -90,9 +100,9 @@ angular.module('starter.services', [])
       console.log("verwijder.");
     },
     getByID: function(productId) {
-      for (var i = 0; i < favorites.length; i++) {
-        if (favorites[i].id === parseInt(productId)) {
-          return favorites[i];
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].id == parseInt(productId)) {
+          return products[i];
         }
       }
     }
