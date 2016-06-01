@@ -41,6 +41,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/tutorial',
       templateUrl: 'templates/tutorial-cards.html',
       controller: 'Cards'
+    }) 
+  .state('addData', {
+      url: '/data',
+      templateUrl: 'templates/shopping-cart.html',
+      controller: "AddDataCtlr"
     })
 
   // Each tab has its own nav history stack:

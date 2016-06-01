@@ -3,6 +3,16 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
+body.platform-ios.platform-cordova:not(.fullscreen) {
+    margin-top: 20px;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .has-tabs,
+body.platform-ios.platform-cordova:not(.fullscreen) .bar-footer.has-tabs
+{
+    bottom: 20;
+}
+
 /* Product css */
 .list.products .list {
     display: flex;
@@ -16,7 +26,6 @@ html, body {
 {
     bottom: 0;
 }
-
 
 .list.products .item.item-thumbnail-top {
     width: 50%;
