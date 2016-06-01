@@ -88,6 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+  
     .state('product-detail', {
       url: '/product/:productId',
       templateUrl: 'templates/product-detail.html',
