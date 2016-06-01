@@ -35,9 +35,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('AddDataCtlr', function($scope, $stateParams, $location, $state) {
-  console.log("Data controller.");
-
+.controller('AddDataCtlr', function($scope, $stateParams, $location, $state)
+{
   $scope.clearDB = function() {
     console.log("Database has been wiped.")
     localStorage.clear();
@@ -77,7 +76,6 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     //window.location.reload(true);  
     $location.path('#/tab/dash');
   };
-  
 })
 
 .controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList, $ionicPopup, $timeout) {
@@ -153,8 +151,6 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
      console.log('Thank you for not eating my delicious ice cream cone');
    });
  };
-
-  
 })
 
 
@@ -255,20 +251,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
   $scope.currentlyScanning = false;
 
+  //var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 });
+
   $scope.scanBarcode = function()
   {
+    //Products.add(JSON.parse(pr_string));
+
     if(!$scope.currentlyScanning)
     {
         $cordovaBarcodeScanner.scan().then(function(imageData)
         {
             $scope.currentlyScanning = false;
-            
-            setTimeout(function() {
-              alert(imageData.text);
-            }, 0);            
+
+            var product = JSON.parse(imageData.text);
+
+            Products.add(product);
+
+            $scope.calculateData();
             
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
+
         }, function(error)
         {
             console.log("An error happened -> " + error);
