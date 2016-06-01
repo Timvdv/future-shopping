@@ -223,7 +223,7 @@ span.bold{
 }
 
 .slideContainer.slider {
-    height: 95%;
+    height: 100vh;
 }
 
 .slideBox {
@@ -261,4 +261,9 @@ span.bold{
 body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
 {
     top:70px;    
+}
+
+.button.back-button.hide.buttons.button-clear.header-item
+{
+    display: block;
 }

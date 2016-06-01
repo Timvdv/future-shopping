@@ -54,22 +54,9 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var products = [
-    { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
-    { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
-    { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
-    { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
-    { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
-    { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
-    { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 },
-    { id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 }
-  ];
 
-  var favorites = [
-    { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10},
-    { id: 2,title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
-    { id: 3,title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15}
-  ];
+  var products = JSON.parse(localStorage["products"]); 
+  var favorites = JSON.parse(localStorage["favorites"]);  
 
   return {
     all: function() {
@@ -77,6 +64,7 @@ angular.module('starter.services', [])
     },
     remove: function(product) {
       products.splice(products.indexOf(product), 1);
+      localStorage["products"] = JSON.stringify(products);
     },
     get: function(product) {
       for (var i = 0; i < chats.length; i++) {
@@ -90,6 +78,7 @@ angular.module('starter.services', [])
     addToFavorites: function(product){
       if(favorites.indexOf(product)) {
         favorites.push(product); 
+        localStorage["favorites"] = JSON.stringify(favorites);
       }      
     },
     getFavorites: function() {
@@ -97,6 +86,7 @@ angular.module('starter.services', [])
     },
     removeFavorite: function(product) {
       favorites.splice(favorites.indexOf(product), 1);
+      localStorage["favorites"] = JSON.stringify(favorites);
       console.log("verwijder.");
     },
     getByID: function(productId) {
@@ -113,19 +103,15 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var shoppingList = [
-    {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
-    {title: "Quaker Havermout", aantal: 2, checked: false}, 
-    {title: "Calvé Pindakaas", aantal: 1, checked: true}, 
-    {title: "AH Frambozenvla", aantal: 1, checked: false}
-  ];
-
+  var shoppingList = JSON.parse(localStorage["shoppingList"]);
+  
   return {
     all: function() {
       return shoppingList;
     },
     remove: function(li) {
       shoppingList.splice(shoppingList.indexOf(li), 1);
+      localStorage["shoppingList"] = JSON.stringify(shoppingList);
     },
     get: function(li) {
       for (var i = 0; i < shoppingList.length; i++) {
@@ -139,6 +125,7 @@ angular.module('starter.services', [])
     add: function(li) {
       if(shoppingList.indexOf(li))  {
         shoppingList.push(li); 
+        localStorage["shoppingList"] = JSON.stringify(favorites);
       }
       else{
         shoppingList[shoppingList.indexOf(li)].aantal += 1;
