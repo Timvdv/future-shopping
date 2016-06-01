@@ -49,9 +49,8 @@ angular.module('starter.services', [])
   };
 })
 
-.factory('Products', function() {
-  // Might use a resource here that returns a JSON array
-
+.factory('Products', function()
+{
   // Some fake testing data
   var products = [], 
          favorites = []
@@ -71,8 +70,6 @@ angular.module('starter.services', [])
       return products;
     },
     add: function(li) {
-      console.log(li);
-
       if(products.indexOf(li))
       {
         products.push(li); 
