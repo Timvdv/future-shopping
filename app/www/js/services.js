@@ -49,7 +49,6 @@ angular.module('starter.services', [])
   };
 })
 
-
 .factory('Products', function() {
   // Might use a resource here that returns a JSON array
 
@@ -70,6 +69,18 @@ angular.module('starter.services', [])
   return {
     all: function() {
       return products;
+    },
+    add: function(li) {
+      console.log(li);
+
+      if(products.indexOf(li))
+      {
+        products.push(li); 
+        localStorage["products"] = JSON.stringify(products);
+      }
+      else {
+        products[products.indexOf(li)].aantal += 1;
+      }
     },
     remove: function(product) {
       products.splice(products.indexOf(product), 1);
