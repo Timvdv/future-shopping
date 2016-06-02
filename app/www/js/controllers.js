@@ -345,7 +345,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.listCanSwipe = true;
 
 });
-  
+
 function secondsToTime(secs)
 {
     secs = Math.round(secs);
