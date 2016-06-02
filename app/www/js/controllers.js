@@ -60,8 +60,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
       { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8}, 
       { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15},
       { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16 },
-      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 4.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
-      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
+      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20 },
+      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 2.45, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13 },
       { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11 }
     ];
 
@@ -209,7 +209,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     $scope.totalTime = Math.round(totalTime / 60 * 100) / 100;
 
     //Klopt niet helemaal, maar good enought okdoei
-    $scope.totalPrice = $scope.totalPrice.toString().split(".")[0] + "," + ('0' + $scope.totalPrice.toString().split(".")[1]).slice(-2)
+    $scope.totalPrice = $scope.totalPrice.toFixed(2).split('.')[0] + ',' + $scope.totalPrice.toFixed(2).split('.')[1]
     
     $scope.updateTotals();
   }
@@ -345,3 +345,22 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.listCanSwipe = true;
 
 });
+  
+// function secondsToTime(secs)
+// {
+//     secs = Math.round(secs);
+//     var hours = Math.floor(secs / (60 * 60));
+// ​
+//     var divisor_for_minutes = secs % (60 * 60);
+//     var minutes = Math.floor(divisor_for_minutes / 60);
+// ​
+//     var divisor_for_seconds = divisor_for_minutes % 60;
+//     var seconds = Math.ceil(divisor_for_seconds);
+// ​
+//     var obj = {
+//         "h": hours,
+//         "m": minutes,
+//         "s": seconds
+//     };
+//     return obj;
+// }
