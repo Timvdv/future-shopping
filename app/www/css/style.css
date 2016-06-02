@@ -372,19 +372,19 @@ body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
 
 .slideButtons {
     padding: 0 10px;
-    position: fixed;
+    position: absolute;
     bottom: 60px;
     width: 100%;
 }
 
 .button.button-stable.prev {
     left: 10px;
-    position: fixed;
+    position: absolute;
 }
 
 .button.button-stable.next {
     right: 10px;
-    position: fixed;
+    position: absolute;
 }
 
 ion-content.tutorial {
