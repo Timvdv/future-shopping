@@ -102,6 +102,7 @@ angular.module('starter.services', [])
       if(favorites.indexOf(product)) {
         favorites.push(product); 
         localStorage["favorites"] = JSON.stringify(favorites);
+        console.log(favorites);
       }      
     },
     getFavorites: function() {
@@ -148,11 +149,23 @@ angular.module('starter.services', [])
     add: function(li) {
       if(shoppingList.indexOf(li))  {
         shoppingList.push(li); 
-        localStorage["shoppingList"] = JSON.stringify(favorites);
+        localStorage["shoppingList"] = JSON.stringify(shoppingList);
       }
-      else{
-        shoppingList[shoppingList.indexOf(li)].aantal += 1;
+      else{      
+        shoppingList.indexOf(li).aantal += 1;  
+        
       }
+    },
+    checkItem: function(li)
+    {
+      console.log("Index" + shoppingList.indexOf(li))
+      if(shoppingList.indexOf(li))
+      {
+        shoppingList[shoppingList.indexOf(li)].checked = true; 
+        localStorage["shoppingList"] = JSON.stringify(shoppingList);
+        console.log(shoppingList[shoppingList.indexOf(li)]);
+      }       
     }
+
   };
 });

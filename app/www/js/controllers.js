@@ -95,6 +95,30 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     ShoppingList.remove(item);
   };
 
+  $scope.settings = [
+  {
+    showFields: false,
+    showAddButton: true
+  }];
+
+  $scope.toggleCheckMark = function(el, item)
+  {
+    //el.target.parentElement.parentElement.className += " checked-Item";
+    ShoppingList.checkItem(item);
+  }
+
+  console.log($scope.settings);
+
+  
+  $scope.toggleInput = function()
+  {
+    document.getElementById("productInput").value="";
+    document.getElementById("aantalInput").value = 1;
+    if ($scope.settings.showFields ? console.log("Input fields are hidden.") : console.log("Input fields are shown."));
+    $scope.settings.showFields = !$scope.settings.showFields;
+    $scope.settings.showAddButton = !$scope.settings.showAddButton;
+  }
+
   $scope.add = function($event)
   {
     var name = document.getElementById("productInput");
@@ -104,64 +128,37 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
       var item = {title: name.value, aantal: aantal.value, checked: false};
       console.log(item);
       ShoppingList.add(item);
+      $scope.toggleInput();
+      name.value = "";
+      aantal.value = 1;
     } else {
       $scope.showPopup();
       $event.preventDefault();
     }
+
   };
 
   $scope.showPopup = function() {
-  $scope.data = {};
+    $scope.data = {};
 
-  // An elaborate, custom popup
-  var myPopup = $ionicPopup.show({
-    template: '',
-    title: 'Vul a.u.b alle velden in',
-    subTitle: 'Controleer goed of je alle velden hebt ingevuld',
-    scope: $scope,
-    buttons: [
-      {
-        text: '<b>Ok</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          myPopup.close();
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '',
+      title: 'Vul a.u.b alle velden in',
+      subTitle: 'Controleer goed of je alle velden hebt ingevuld',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            myPopup.close();
+          } 
         }
-      }
-    ]
-  });
+      ]
+    });
+   };
 
-  myPopup.then(function(res) {
-    console.log('Tapped!', res);
-  });
- };
-
- // A confirm dialog
- $scope.showConfirm = function() {
-   var confirmPopup = $ionicPopup.confirm({
-     title: 'Consume Ice Cream',
-     template: 'Are you sure you want to eat this ice cream?'
-   });
-
-   confirmPopup.then(function(res) {
-     if(res) {
-       console.log('You are sure');
-     } else {
-       console.log('You are not sure');
-     }
-   });
- };
-
- // An alert dialog
- $scope.showAlert = function() {
-   var alertPopup = $ionicPopup.alert({
-     title: 'Don\'t eat that!',
-     template: 'It might taste good'
-   });
-
-   alertPopup.then(function(res) {
-     console.log('Thank you for not eating my delicious ice cream cone');
-   });
- };
 })
 
 .controller('settings', function($scope, $stateParams, Products) 
@@ -177,7 +174,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     };    
 })
 
-.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products)
+.controller('ShoppingCart', function($scope, $cordovaBarcodeScanner, $ionicListDelegate, Products, $ionicPopup)
 {
   // Heb de prijs even 2 keer toegevoegd, omdat integers bij de front end worden afgerond en hoef op
   // deze manier later geen eventuele regexes toe te passen. :)
@@ -230,6 +227,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
       $scope.calculateData();
   }
 
+  $scope.showPopup = function(title, subtitle) {
+    $scope.data = {};
+
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '',
+      title: title,
+      subTitle: subtitle,
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            myPopup.close();
+          } 
+        }
+      ]
+    });
+   };
+
   // Verminder het aantal keer dat een product in je winkelmandje zit.
   $scope.decreaseQuantity = function(item)
   {
@@ -249,11 +267,13 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   {
       Products.remove(product);
       $scope.calculateData();
+      $scope.showPopup(product.title +" is verwijderd uit uw winkelmand.", "");
   }
 
   $scope.addFavorite = function(product){
       Products.addToFavorites(product);
       $ionicListDelegate.closeOptionButtons();
+      $scope.showPopup(product.title +" is aan uw favorieten toegevoegd!", "Ga naar 'mijn favorieten' om het product te bekijken.");
   }
 
   $scope.addProduct = function(data)
@@ -294,7 +314,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('Cards', function($scope, $ionicSlideBoxDelegate) {
+.controller('Cards', function($scope, $ionicSlideBoxDelegate, $ionicPopup) {
     var cardTypes = [
         { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
         { image: 'img/goudakaas.JPG', title: 'Stap 1', content: 'Shopping cart is leeg ga producten scannen. Druk op de camera.'},
@@ -343,6 +363,37 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.shouldShowDelete = false;
   $scope.shouldShowReorder = false;
   $scope.listCanSwipe = true;
+
+  $scope.showPopup = function(choice) {
+    $scope.data = {};
+    var title;
+    var subtitle;
+    if(choice == 1)
+    {
+      title = "Gouda kaas is toevoegd aan uw favorieten!";
+      subtitle = "Ga naar 'mijn favorieten' om het product te bekijken";
+    }else
+    {
+      title = "Gouda kaas is verwijderd uit uw winkelmand";
+      subtitle = "";
+    }
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '',
+      title: title,
+      subTitle: subtitle,
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            myPopup.close();
+          } 
+        }
+      ]
+    });
+   };
 
 });
 

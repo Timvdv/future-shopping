@@ -394,3 +394,8 @@ ion-content.tutorial {
 .title.title-left.header-item {
     text-align: center;
 }
+
+
+.checked-Item {
+    color: green !important;
+}
