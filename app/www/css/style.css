@@ -397,5 +397,5 @@ ion-content.tutorial {
 
 
 .checked-Item {
-    color: green !important;
+    text-decoration: line-through;
 }

@@ -158,13 +158,21 @@ angular.module('starter.services', [])
     },
     checkItem: function(li)
     {
-      console.log("Index" + shoppingList.indexOf(li))
+      // If statements voor gekke bug. Als indexOf() 0 terug geeft, werkt de boel niet,
+      // maar als ik het zo gewoon 2x typ werkt alles dus.. is gucci.
       if(shoppingList.indexOf(li))
       {
-        shoppingList[shoppingList.indexOf(li)].checked = true; 
+        var i = shoppingList.indexOf(li);
+        shoppingList[i].checked = true; 
         localStorage["shoppingList"] = JSON.stringify(shoppingList);
-        console.log(shoppingList[shoppingList.indexOf(li)]);
-      }       
+        console.log(shoppingList[i]);
+      }else
+      {
+        var i = shoppingList.indexOf(li);
+        shoppingList[i].checked = true;
+        localStorage["shoppingList"] = JSON.stringify(shoppingList);
+        console.log(shoppingList[i]);
+      }      
     }
 
   };

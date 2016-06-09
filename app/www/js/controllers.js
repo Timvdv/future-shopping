@@ -74,7 +74,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     var shoppingList = [
       {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
       {title: "Quaker Havermout", aantal: 2, checked: false}, 
-      {title: "Calvé Pindakaas", aantal: 1, checked: true}, 
+      {title: "Calvé Pindakaas", aantal: 1, checked: false}, 
       {title: "AH Frambozenvla", aantal: 1, checked: false}
     ];
 
@@ -103,12 +103,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
   $scope.toggleCheckMark = function(el, item)
   {
-    //el.target.parentElement.parentElement.className += " checked-Item";
     ShoppingList.checkItem(item);
   }
-
-  console.log($scope.settings);
-
   
   $scope.toggleInput = function()
   {
