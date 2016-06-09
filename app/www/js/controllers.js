@@ -187,7 +187,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.updateTotals = function()
   {
     //KOTS CODE -> BLUUUUGHGHHHHH
-    document.getElementById('price').innerHTML =  $scope.totalPrice;
+    
     document.getElementById('time').innerHTML =  $scope.totalTime.h + ":" + $scope.totalTime.m + ":" + $scope.totalTime.s;
   }
 
@@ -204,9 +204,8 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     $scope.totalPrice = Math.round(totalPrice * 100) / 100;
     $scope.totalTime = secondsToTime(totalTime);
 
-    //Klopt niet helemaal, maar good enought okdoei
     $scope.totalPrice = $scope.totalPrice.toFixed(2).split('.')[0] + ',' + $scope.totalPrice.toFixed(2).split('.')[1]
-    
+    document.getElementById('price').innerHTML =  $scope.totalPrice;
     //$scope.updateTotals();
   }
 
