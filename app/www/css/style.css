@@ -394,3 +394,12 @@ ion-content.tutorial {
 .title.title-left.header-item {
     text-align: center;
 }
+
+.rating {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.rating i.ion-ios-star-outline {
+    font-size: 26px;
+}

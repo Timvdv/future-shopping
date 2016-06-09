@@ -22,6 +22,14 @@
         Notificatie bij passeren van product.
         </ion-toggle>
     </ion-list>
+    <div class="rating">
+      <span>{{product.rating}}</span>
+      <i class="ion-ios-star-outline" ng-click="changeRating(1)" ng-class="product.rating =< 1 ? class='ion-ios-star-outline' : class='ion-ios-star'"></i>
+      <i class="ion-ios-star-outline" ng-click="changeRating(2)"></i>
+      <i class="ion-ios-star-outline" ng-click="changeRating(3)"></i>
+      <i class="ion-ios-star-outline" ng-click="changeRating(4)"></i>
+      <i class="ion-ios-star-outline" ng-click="changeRating(5)"></i>
+    </div>
   </ion-content>
 </ion-view>
  
