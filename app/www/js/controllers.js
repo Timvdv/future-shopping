@@ -207,7 +207,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     //Klopt niet helemaal, maar good enought okdoei
     $scope.totalPrice = $scope.totalPrice.toFixed(2).split('.')[0] + ',' + $scope.totalPrice.toFixed(2).split('.')[1]
     
-    $scope.updateTotals();
+    //$scope.updateTotals();
   }
 
   // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
