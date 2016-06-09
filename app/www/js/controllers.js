@@ -92,11 +92,15 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList, $ionicPopup, $timeout) {
+.controller('ShoppingListCtrl', function($scope, $stateParams, ShoppingList, $ionicPopup, $timeout, $ionicListDelegate) {
   $scope.list = ShoppingList.all();
   $scope.remove = function(item) {
     ShoppingList.remove(item);
   };
+
+  $scope.shouldShowDelete = false;
+  $scope.shouldShowReorder = false;
+  $scope.listCanSwipe = true;
 
   $scope.settings = [
   {
@@ -107,6 +111,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.toggleCheckMark = function(el, item)
   {
     ShoppingList.checkItem(item);
+    $ionicListDelegate.closeOptionButtons();
+  }
+
+  $scope.test = function()
+  {
+    console.log("test");
   }
   
   $scope.toggleInput = function()
@@ -266,13 +276,13 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   {
       Products.remove(product);
       $scope.calculateData();
-      $scope.showPopup(product.title +" is verwijderd uit uw winkelmand.", "");
+      $scope.showPopup(product.title + " is verwijderd uit uw winkelmand.", "");
   }
 
   $scope.addFavorite = function(product){
       Products.addToFavorites(product);
       $ionicListDelegate.closeOptionButtons();
-      $scope.showPopup(product.title +" is aan uw favorieten toegevoegd!", "Ga naar 'mijn favorieten' om het product te bekijken.");
+      $scope.showPopup(product.title + " is aan uw favorieten toegevoegd!", "Ga naar 'mijn favorieten' om het product te bekijken.");
   }
 
   $scope.addProduct = function(data)

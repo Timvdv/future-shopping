@@ -163,13 +163,13 @@ angular.module('starter.services', [])
       if(shoppingList.indexOf(li))
       {
         var i = shoppingList.indexOf(li);
-        shoppingList[i].checked = true; 
+        shoppingList[i].checked = !shoppingList[i].checked; 
         localStorage["shoppingList"] = JSON.stringify(shoppingList);
         console.log(shoppingList[i]);
       }else
       {
         var i = shoppingList.indexOf(li);
-        shoppingList[i].checked = true;
+        shoppingList[i].checked = !shoppingList[i].checked;
         localStorage["shoppingList"] = JSON.stringify(shoppingList);
         console.log(shoppingList[i]);
       }      

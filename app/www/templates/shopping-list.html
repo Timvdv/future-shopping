@@ -1,10 +1,12 @@
 <ion-view view-title="Boodschappenlijst" hide-nav-bar="true">
   <ion-content>
-    <ion-list>
+    <ion-list ng-controller="ShoppingListCtrl"
+    show-delete="shouldShowDelete"
+    show-reorder="shouldShowReorder"
+    can-swipe="listCanSwipe">
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" ng-repeat="item in list" type="item-text-wrap">
-        <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>
-        
-        <ion-option-button class="button-balanced ion-checkmark-round" ng-click="toggleCheckMark($event, item)">
+        <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>      
+        <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="toggleCheckMark($event, item)">
         </ion-option-button>
         <ion-option-button class="button-assertive ion-close-round" ng-click="remove(item)">
         </ion-option-button>
