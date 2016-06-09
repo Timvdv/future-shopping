@@ -171,14 +171,15 @@ body.platform-ios.platform-cordova:not(.fullscreen) .tabs
     font-weight: 600;
 }
 
-.totalPrice, .readyIn {
+.totalPrice, .afrekenen {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.readyIn {
+.afrekenen {
     right: 15px;
+    padding: 0px 15px !important;
 }
 
 .totalPrice {
