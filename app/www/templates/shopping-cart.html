@@ -41,8 +41,16 @@
        </div>       
      </ion-content>
      <div class="bar bar-footer bar-dark" >
-         <div class="totalPrice">Totaalprijs: €<span class="bold" id="price">{{this.totalPrice}}</span></div>
+         <div class="totalPrice">Totaalprijs: €<span class="bold" id="price">{{totalPrice}}</span></div>
          <i class="ion-ios-camera-outline" ng-click="scanBarcode()"></i>
-         <div class="readyIn">Klaar over: <span class="bold" id="time">{{totalTime}}</span> minuten</div>
+         <div class="readyIn">
+            Klaar over:
+            <span class="bold" id="time">
+              {{totalTime.h}}:{{totalTime.m}}:{{totalTime.s}}
+
+              <!--
+              <span ng-if="totalTime.h">{{totalTime.h}} uur</span>
+              <span ng-if="totalTime.m">{{totalTime.m}} minuten</span>
+              <span ng-if="totalTime.s">{{totalTime.s}} seconden</span> -->
      </div>     
 </ion-view>

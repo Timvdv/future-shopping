@@ -1,19 +1,48 @@
 <ion-view view-title="Boodschappenlijst" hide-nav-bar="true">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in list" type="item-text-wrap">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" ng-repeat="item in list" type="item-text-wrap">
         <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>
         
-
-        <ion-option-button class="button-assertive" ng-click="remove(item)">
-          Delete
+        <ion-option-button class="button-balanced ion-checkmark-round" ng-click="toggleCheckMark($event, item)">
+        </ion-option-button>
+        <ion-option-button class="button-assertive ion-close-round" ng-click="remove(item)">
         </ion-option-button>
       </ion-item>
-      
-
-      <a class="button button-full button-positive" href="#tab/list/add" ng-click="add()">
-        Voeg producten toe
-      </a>
     </ion-list>
+      <div ng-class="settings.showFields ? '' : 'hide'">
+          <ion-list class="addProduct">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Naam product</span>
+            <input type="text" name="productName" placeholder="Vul hier de naam van het product in." id="productInput">
+          </label>
+          <label class="item item-input item-select">
+            <span class="input-label">Kies aantal</span>
+            <select id="aantalInput">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </label>
+          <div style="text-align: center; padding-top:10px">
+            <a class="button button-balanced" ng-click="add($event)">
+              Voeg toe aan boodschappenlijst
+            </a>  
+            <button class="button button-light ion-close-round" ng-click="toggleInput()"></button>
+          </div>
+      </div> 
+
+
+      <ion-item class="item-icon-right"  type="item-text-wrap" ng-class="settings.showFields ? 'hide' : ''" ng-click="toggleInput()">
+            <p style="text-align: center">Voeg product toe 
+            <strong class="ion-plus-circled"><!-- Dirty as fuck --></strong></p>          
+      </ion-item>
   </ion-content>
 </ion-view>

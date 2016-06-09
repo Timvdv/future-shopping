@@ -403,3 +403,7 @@ ion-content.tutorial {
 .rating i.ion-ios-star-outline {
     font-size: 26px;
 }
+
+.checked-Item {
+    color: green !important;
+}
