@@ -92,11 +92,23 @@ angular.module('starter.services', [])
       for (var i = 0; i < chats.length-1; i++) {
         if(products.indexOf(product))
         {
-          console.log(products[products.indexOf(product)]);
           return products[products.indexOf(product)];
         }
       }
       return null;
+    },
+    addRating: function (product, number)
+    {
+      //console.log(product, number);
+      if(products.indexOf(product))
+      {
+        products[products.indexOf(product)].rating.push(number);
+        localStorage["products"] = JSON.stringify(products);
+      }else
+      {
+        products[products.indexOf(product)].rating.push(number);
+        localStorage["products"] = JSON.stringify(products);
+      }
     },
     addToFavorites: function(product){
       if(favorites.indexOf(product)) {
