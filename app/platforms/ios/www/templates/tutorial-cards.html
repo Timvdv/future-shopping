@@ -1,0 +1,87 @@
+<ion-view view-title="Tutorial" hide-nav-bar="true" no-scroll>
+  <ion-content class="tutorial">
+    <ion-slide-box class="slideContainer" ng-init="disableSwipe()">
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Tutorial
+        </div>
+        <img class="slideImage" ng-src="img/tutorial_splash.png">
+        <div class="slideContent">
+          Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op "Volgende stap" te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Niet meer tonen".
+        </div>
+        <div class="slideButtons">
+          <a class="button button-stable prev" href="#/tab/dash">Niet meer tonen</a>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>        
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 1
+        </div>
+        <i class="ion-ios-camera-outline"></i>
+        <div class="slideContent">
+          Uw winkelwagen is leeg! U kunt op de camera drukken om producten te scannen.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>          
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 2
+        </div>
+        <div class="list product">
+        <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+          <ion-item class="item item-thumbnail-top">
+           <h2 class="center">Gouda Kaas</h2>
+           <p class="center">€ 2,50</p>
+           <img class="center" src="img/goudakaas.JPG">
+          <ion-option-button class="button-energized" ng-click="showPopup(1)">
+              <i class="ion-ios-heart"></i>Favorite 
+          </ion-option-button>   
+          <ion-option-button class="button-assertive" ng-click="showPopup(2)">
+              <i class="ion-ios-trash"></i>Delete
+          </ion-option-button>      
+        </ion-item>
+        </ion-list>
+        </div>
+        <div class="slideContent">
+          Een product verwijderen of toevoegen aan favorieten? Swipe naar rechts, probeer het maar!
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 3
+        </div>
+        <img class="slideImage" ng-src="img/lijstje_tutorial.png">
+        <!-- <i class="icon ion-ios-list"></i> -->
+        <div class="slideContent">
+          Voor het vullen van uw boodschappenlijst, kunt u klikken op het boodschappenlijstje.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <button class="button button-stable next" ng-click="nextSlide()">Volgende stap</button>
+        </div>
+      </ion-slide>
+      <ion-slide class="slideBox">
+        <div class="slideTitle">
+          Stap 4
+        </div>
+        <img class="slideImage" ng-src="img/settings_tutorial.png">
+        <!-- <i class="icon ion-ios-gear-outline"></i> -->
+        <div class="slideContent">
+          Op de instellingen pagina, kunt u uw gegevens invullen. Hier kan u uw NAW-gegevens achter laten, zodat uw boodschappen thuisbezorgd kunnen worden.
+        </div>
+        <div class="slideButtons">
+          <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
+          <a class="button button-stable next" href="#/tab/dash">Klaar!</a>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>
