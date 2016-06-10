@@ -24,16 +24,55 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
 })
 
-.controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
+.controller('ProductDetailCtrl', function($scope, $stateParams, Products, $ionicPopup) {
   $scope.product = Products.getByID($stateParams.productId);
-  console.log("hoi");
   $scope.settings = {
     aanbieding: true,
     proximity: false
   };
-  $scope.changeRating = function(rating) {
-    $scope.product.rating = rating;
+
+  $scope.addRating = function(rating) {
+    // add rating functie maken in factory.
+    Products.addRating($scope.product, rating);
+    $scope.averageRating();
+    $scope.showPopup();
   }
+
+  $scope.averageRating = function()
+  {
+    var total = 0;
+    var average = 0;
+    for (var i = 0; i < $scope.product.rating.length -1; i++) {
+      total += $scope.product.rating[i];
+    };
+    average = total / $scope.product.rating.length;
+    $scope.rating = average;
+    $scope.ratingCount = $scope.product.rating.length;
+    return Math.round(average);
+  } 
+  $scope.averageRating();
+
+
+  $scope.showPopup = function() {
+    $scope.data = {};
+
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '',
+      title: 'Bedankt voor uw beoordeling!',
+      subTitle: 'Uw mede klanten zullen uw mening zeer op prijs stellen.',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            myPopup.close();
+          } 
+        }
+      ]
+    });
+   };
 })
 
 .controller('AddDataCtlr', function($scope, $stateParams, $location, $state)
@@ -59,13 +98,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     console.log("Database has been filled.")
     localStorage.clear();
     var products = [
-      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10, rating: 3},
-      { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8, rating: 4}, 
-      { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15, rating: 5},
-      { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16, rating: 0},
-      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20, rating: 2},
-      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 2.45, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13, rating: 2},
-      { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11, rating: 0}
+      { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10, 
+        rating: [2,1,2,2,3,4,]
+      },
+      { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8, 
+        rating: [1,5,,4,2,5]
+      }, 
+      { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15, 
+        rating: [1,5,4,4,4,4,5,5]
+      },
+      { id: 4, title: 'Coca Cola', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2 liter", thumbnail:"img/cocacola.JPG", aantal: 1, inpakTijd: 16, 
+        rating: [1,3,3,3,4,5,5]
+      },
+      { id: 5, title: 'Kip Filet', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "1 kilo", thumbnail:"img/kipfilet.JPG", aantal: 1, inpakTijd: 20, 
+        rating: [1,5,3,4,5,5]
+      },
+      { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 2.45, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13, 
+        rating: [1,1,2,4,3,4,5,5]
+      },
+      { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.jpg", aantal: 1, inpakTijd: 11, 
+        rating: [1,5,3,5,5]
+      }
     ];
 
     var favorites = [
@@ -88,7 +141,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
     console.log(JSON.parse(localStorage["products"]));
     localStorage["dbStatus"] = "Bevat data.";
     window.location.reload(true);  
-    //$location.path('#/tab/dash');
+   
   };
 })
 
@@ -294,6 +347,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
   var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12 });
 
+
+  // Hoi timmie. De json van PRODUCTEN is veranderd. Er zitten nu ratings bij dus hou daar rekening mee als je nieuwe JSON probeert toe te voegen
+  // VOORBEELD:
+  // { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.jpg", aantal: 1, inpakTijd: 11, 
+  //   rating: [1,5,3,4,4,3,3,4,5,5]
+  // }
   $scope.scanBarcode = function()
   {
     //debug add product
