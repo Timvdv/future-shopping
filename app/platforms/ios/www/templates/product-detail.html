@@ -1,0 +1,38 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{product.title}}">
+  <ion-content class="padding productDetail">
+    <div class="list">
+      <!-- <h3 class="alignCenter">{{product.title}}</h3> -->
+      <img ng-src="{{product.thumbnail}}">
+      <h4><span class="bold">Prijs:</span> {{product.prijsFrontEnd}}</h4>
+      <h4><span class="bold">Gewicht:</span> {{product.inhoud}}</h4>
+      <p><span class="bold">Omschrijving:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil consectetur dolorum, excepturi ipsum quaerat accusantium maiores quisquam, corporis delectus possimus illum porro error, temporibus labore ipsam quidem aut sit.
+      </p>
+    </div>
+    <ion-list>
+        <ion-toggle  ng-model="settings.aanbieding">
+        Notificatie bij aanbieding.
+        </ion-toggle>
+        <ion-toggle  ng-model="settings.proximity">
+        Notificatie bij passeren van product.
+        </ion-toggle>
+    </ion-list>
+    <div class="rating"> 
+      <i ng-class="averageRating() > 0 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(1)"></i>
+      <i ng-class="averageRating() > 1 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(2)"></i>
+      <i ng-class="averageRating() > 2 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(3)"></i>
+      <i ng-class="averageRating() > 3 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(4)"></i>
+      <i ng-class="averageRating() > 4 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(5)"></i>
+    </div>
+    <div>
+      <span>{{averageRating()}} gemiddeld</span> 
+      <span>({{ratingCount}} beoordelingen)</span>
+    </div>
+  </ion-content>
+</ion-view>
+ 

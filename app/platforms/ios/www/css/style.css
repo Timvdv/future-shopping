@@ -1,0 +1,411 @@
+/* Empty. Add your own CSS if you like */
+html, body {
+    font-family: 'Raleway', sans-serif;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .tab-nav{
+    padding-top: 20px;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .tabs
+{
+    height: 69px;
+}
+
+/* Product css */
+.list.products .list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 49px;
+}
+
+.has-tabs, .bar-footer.has-tabs
+{
+    bottom: 0;
+}
+
+.list.products .item.item-thumbnail-top {
+    width: 50%;
+    margin: 0;
+}
+
+.list.products .item.item-thumbnail-top:nth-child(even) {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #979797;
+}
+
+.list.products .item.item-thumbnail-top:nth-child(odd) {
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+}
+
+.list.products .item-complex .item-content {
+    padding: 15px !important;
+}
+
+.list.products a.item-content {
+    padding: 15px;
+}
+
+.list.products .item.item-thumbnail-top .slider-pager {
+    display: none;
+}
+
+.list.products .item.item-thumbnail-top h2.center, .list.products .item.item-thumbnail-top p.center {
+    text-align: center;
+}
+
+.list.products .item.item-thumbnail-top h2.center {
+    font-size: 16px;
+    color: #525252;
+    margin-bottom: 10px;
+}
+
+.list.products .item.item-thumbnail-top p.center {
+    font-size: 22px;
+    color: #000000;
+    overflow: visible;
+}
+
+.list.products .item.item-thumbnail-top img.center {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+}
+
+.list.products .item.item-thumbnail-top .productValue {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.list.products .item.item-thumbnail-top .productValue i.icon.ion-ios-minus {
+    width: 15%;
+    display: block;
+    font-size: 34px;
+    color: #575756;
+    text-align: center;
+}
+
+.list.products .item.item-thumbnail-top .productValue i.icon.ion-ios-plus {
+    width: 15%;
+    display: block;
+    font-size: 34px;
+    color: #2981b9;
+    text-align: center;
+}
+
+.list.products .item.item-thumbnail-top .productValue label.item.item-input {
+    width: 45%;
+    display: block;
+    text-align: center;
+    padding: 0;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.list.products .item.item-thumbnail-top .productValue label.item.item-input input[type="text"] {
+    padding: 0;
+    text-align: center;
+    font-size: 20px;
+    color: #575757;
+}
+
+.bar.bar-footer.bar-dark {
+    height: 55px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-image: linear-gradient(180deg, #363636, #363636 50%, transparent 50%);
+}
+
+.bar.bar-dark {
+    border-color: #363636;
+    background-color: #363636;
+}
+
+.bar.bar-footer.bar-dark i.ion-ios-camera-outline {
+    font-size: 34px;
+    background: #ff6868;
+    border: 2.5px solid #ff9e9e;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    left: 50%;
+}
+
+.tab-nav
+{
+    top:0;
+}
+
+.list.products i.ion-ios-heart {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.list.products i.ion-ios-trash {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.bold.ng-binding {
+    font-weight: 600;
+}
+
+.totalPrice, .afrekenen {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.afrekenen {
+    right: 15px;
+    padding: 0px 15px !important;
+}
+
+.totalPrice {
+    left: 15px;
+}
+.productDetail .list img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.back-text {
+    color: #387ef5;
+    font-size: 14px;
+}
+
+.bar-stable.bar.bar-header {
+    padding-bottom: 43px;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+span.bold{
+    font-weight: 600;
+}
+
+.hide
+{
+    display: none;
+}
+
+.addProduct .item.item-input.item-select {
+    padding: 25px !important;
+}
+
+.addProduct option {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.slideContainer.slider {
+    height: 100vh;
+}
+
+.slideBox {
+    padding-top: 25px;
+}
+
+.slideBox .slideTitle {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.slideBox img.slideImage {
+    height: 250px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.slideBox .slideContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    padding-top: 35px;
+}
+
+.scroll-content
+{
+    top: 50px;
+}
+
+body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
+{
+    top:70px;    
+}
+
+.button.back-button.hide.buttons.button-clear.header-item
+{
+    display: block;
+}
+
+.slider-pager {
+    display: none;
+}
+
+.slideBox .ion-ios-camera-outline {
+    font-size: 100px;
+    background: #ff6868;
+    border: 5px solid #ff9e9e;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin: 0px auto 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: #fff;
+}
+
+.slideBox .icon.ion-ios-list, .slideBox .icon.ion-ios-gear-outline {
+    font-size: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    margin: 0px auto 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: #387ef5;
+}
+
+.list.product {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.list.product .list {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.list.product .item-complex .item-content {
+    padding: 15px !important;
+}
+
+.list.product a.item-content {
+    padding: 15px;
+}
+
+.list.product .item.item-thumbnail-top .slider-pager {
+    display: none;
+}
+
+.list.product .item.item-thumbnail-top h2.center, .list.products .item.item-thumbnail-top p.center {
+    text-align: center;
+}
+
+.list.product .item.item-thumbnail-top h2.center {
+    font-size: 16px;
+    color: #525252;
+    margin-bottom: 10px;
+}
+
+.list.product .item.item-thumbnail-top p.center {
+    font-size: 22px;
+    color: #000000;
+    overflow: visible;
+    text-align: center;
+}
+
+.list.product .item.item-thumbnail-top img.center {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.list.product .item-complex, a.item.item-complex, button.item.item-complex {
+    border: none;
+}
+
+.list.product i.ion-ios-heart {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.list.product i.ion-ios-trash {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.slideButtons {
+    padding: 0 10px;
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+}
+
+.button.button-stable.prev {
+    left: 10px;
+    position: absolute;
+}
+
+.button.button-stable.next {
+    right: 10px;
+    position: absolute;
+}
+
+ion-content.tutorial {
+    top: 0;
+}
+
+.title.title-left.header-item {
+    text-align: center;
+}
+
+.rating {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.rating i.ion-ios-star-outline {
+    font-size: 26px;
+}
+
+.checked-Item {
+    text-decoration: line-through;
+}

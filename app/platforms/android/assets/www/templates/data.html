@@ -1,0 +1,14 @@
+<ion-view view-title="Demo instellingen" hide-nav-bar="false">
+  <ion-content>
+    <a class="button button-full button-positive" ng-click="clearDB()" href="#/tab/settings">
+      Leeg database
+    </a>
+    <a class="button button-full button-positive" ng-click="fillDB()" href="#/tab/settings">
+      Vul database
+    </a>
+    <ion-item class="item-icon-right"  type="item-text-wrap" >
+        <p><strong>Database status:</strong> {{dbStatus}}</p>
+    </ion-item>
+    
+  </ion-content>
+</ion-view> 
