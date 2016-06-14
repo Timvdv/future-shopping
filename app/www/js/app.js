@@ -109,6 +109,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/usersettings',
     templateUrl: 'templates/user-settings.html',
     controller: 'UserSettings'
+  })
+
+  .state('checkout', {
+    url: '/checkout',
+    templateUrl: 'templates/checkout.html',
+    controller: 'CheckoutCtrl'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
