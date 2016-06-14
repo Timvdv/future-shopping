@@ -1,5 +1,5 @@
-angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 'ShoppingList' ,
-	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup, ShoppingList)
+angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 'ShoppingList' , '$ionicListDelegate',
+	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup, ShoppingList, $ionicListDelegate)
 {
 	var cardTypes = [
         { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
@@ -9,63 +9,63 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
         { image: 'img/goudakaas.JPG', title: 'Stap 4', content: 'Er kunnen instellingen gevuld worden voor het afrekenen, Thuisbezorgen etc. etc. etc.'},
     ];
 
-    
- 
-  console.log('ahoy');
+  var shoppingList = [
+    {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
+    {title: "Quaker Havermout", aantal: 2, checked: false}
+  ];
 
-    $scope.settings = [
-    {
-      showFields: false,
-      showAddButton: true
-    }];
+  $scope.list = shoppingList;
+  $scope.remove = function(item) {
+    shoppingList.splice(shoppingList.indexOf(item), 1);
+    $scope.$apply;
+  };
 
-    $scope.toggleInput = function()
-    {
-      document.getElementById("productInput").value="";
-      document.getElementById("aantalInput").value = 1;
-      if ($scope.settings.showFields ? console.log("Input fields are hidden.") : console.log("Input fields are shown."));
-      $scope.settings.showFields = !$scope.settings.showFields;
-      $scope.settings.showAddButton = !$scope.settings.showAddButton;
-    }
+  $scope.shouldShowDelete = false;
+  $scope.shouldShowReorder = false;
+  $scope.listCanSwipe = true;
 
-    $scope.add = function($event)
-    {
-      var name = document.getElementById("productInput");
-      var aantal = document.getElementById("aantalInput");
-      if(name.value != "" && aantal.value != "Kies aantal")
+  $scope.settings = [
+  {
+    showFields: false,
+    showAddButton: true
+  }];
+
+  $scope.toggleCheckMark = function(el, item)
+  {
+    // If statements voor gekke bug. Als indexOf() 0 terug geeft, werkt de boel niet,
+      // maar als ik het zo gewoon 2x typ werkt alles dus.. is gucci.
+      if(shoppingList.indexOf(item))
       {
-        var item = {title: name.value, aantal: aantal.value, checked: false};
-        console.log(item);
-        ShoppingList.add(item);
-        $scope.toggleInput();
-        name.value = "";
-        aantal.value = 1;
-      } else {
-        $scope.showPopup();
-        $event.preventDefault();
-      }
-    };
+        var i = shoppingList.indexOf(item);
+        shoppingList[i].checked = !shoppingList[i].checked; 
+        localStorage["shoppingList"] = JSON.stringify(shoppingList);
+        console.log(shoppingList[i]);
+      }else
+      {
+        var i = shoppingList.indexOf(item);
+        shoppingList[i].checked = !shoppingList[i].checked;
+        localStorage["shoppingList"] = JSON.stringify(shoppingList);
+        console.log(shoppingList[i]);
+      }      
+    $ionicListDelegate.closeOptionButtons();
+  }
 
-    $scope.showPopup = function() {
-      $scope.data = {};
+  $scope.test = function()
+  {
+    console.log("test");
+  }
 
-      // An elaborate, custom popup
-      var myPopup = $ionicPopup.show({
-        template: '',
-        title: 'Vul a.u.b alle velden in',
-        subTitle: 'Controleer goed of je alle velden hebt ingevuld',
-        scope: $scope,
-        buttons: [
-          {
-            text: '<b>Ok</b>',
-            type: 'button-positive',
-            onTap: function(e) {
-              myPopup.close();
-            } 
-          }
-        ]
-      });
-    };
+  $scope.toggleInput = function()
+  {
+    document.getElementById("productInput").value="";
+    document.getElementById("aantalInput").value = 1;
+    if ($scope.settings.showFields ? console.log("Input fields are hidden.") : console.log("Input fields are shown."));
+    $scope.settings.showFields = !$scope.settings.showFields;
+    $scope.settings.showAddButton = !$scope.settings.showAddButton;
+  }
+  
+
+    
 
     $scope.cards = [];
  

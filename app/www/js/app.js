@@ -110,8 +110,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     templateUrl: 'templates/user-settings.html',
     controller: 'UserSettings'
   })
-
-  .state('checkout', {
+  .state('check-out', {
     url: '/checkout',
     templateUrl: 'templates/checkout.html',
     controller: 'CheckoutCtrl'
