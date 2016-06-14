@@ -1,5 +1,5 @@
-angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 
-	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup)
+angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 'ShoppingList' ,
+	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup, ShoppingList)
 {
 	var cardTypes = [
         { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
@@ -8,8 +8,64 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
         { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 4', content: 'Er kunnen instellingen gevuld worden voor het afrekenen, Thuisbezorgen etc. etc. etc.'},
     ];
+
+    
  
   console.log('ahoy');
+
+    $scope.settings = [
+    {
+      showFields: false,
+      showAddButton: true
+    }];
+
+    $scope.toggleInput = function()
+    {
+      document.getElementById("productInput").value="";
+      document.getElementById("aantalInput").value = 1;
+      if ($scope.settings.showFields ? console.log("Input fields are hidden.") : console.log("Input fields are shown."));
+      $scope.settings.showFields = !$scope.settings.showFields;
+      $scope.settings.showAddButton = !$scope.settings.showAddButton;
+    }
+
+    $scope.add = function($event)
+    {
+      var name = document.getElementById("productInput");
+      var aantal = document.getElementById("aantalInput");
+      if(name.value != "" && aantal.value != "Kies aantal")
+      {
+        var item = {title: name.value, aantal: aantal.value, checked: false};
+        console.log(item);
+        ShoppingList.add(item);
+        $scope.toggleInput();
+        name.value = "";
+        aantal.value = 1;
+      } else {
+        $scope.showPopup();
+        $event.preventDefault();
+      }
+    };
+
+    $scope.showPopup = function() {
+      $scope.data = {};
+
+      // An elaborate, custom popup
+      var myPopup = $ionicPopup.show({
+        template: '',
+        title: 'Vul a.u.b alle velden in',
+        subTitle: 'Controleer goed of je alle velden hebt ingevuld',
+        scope: $scope,
+        buttons: [
+          {
+            text: '<b>Ok</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              myPopup.close();
+            } 
+          }
+        ]
+      });
+    };
 
     $scope.cards = [];
  
