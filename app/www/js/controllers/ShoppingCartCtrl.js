@@ -139,4 +139,5 @@ angular.module('starter.controllers').controller('ShoppingCart', ['$scope', '$ht
       });
     }
   };
+
 }]);
