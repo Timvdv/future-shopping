@@ -440,3 +440,12 @@ ion-item.item-icon.item i.ion-plus-circled {
     vertical-align: middle;
     padding-left: 5px;
 }
+
+ion-item.item.afbeelding {
+    border: none;
+    min-height: 100%;
+    width: 100%;
+}
+ion-item.item.afbeelding img {
+    width: 100%;
+}

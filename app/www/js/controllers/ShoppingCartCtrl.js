@@ -136,5 +136,5 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
             console.log("new value:" + newVal);
             Products.add(JSON.parse(newVal));    
         }
-    });    
+    });
 }]);
