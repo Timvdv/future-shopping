@@ -14,13 +14,11 @@
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
-		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
-		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		33841C15B01E443C84C775A6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C133F6DA5440592904E3C /* CoreVideo.framework */; };
 		5D4FE37194BA4F09A6DC6E2D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392E50C8CA2D45309E32C84D /* CoreImage.framework */; };
 		A1913CA551C143DCB3082230 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335437B5BE3F4AD0941B1F26 /* QuartzCore.framework */; };
 		B5E633846F15447496E8A3D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F42716FA5E4A33AADB19A7 /* AVFoundation.framework */; };
+		C0869E817CC148D392390762 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DDF18D1F145E2A68ACCDD /* CDVLogger.m */; };
 		C1536FBB8D124276B165A302 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E012B16F2AD448F8E470CA3 /* libiconv.dylib */; };
 		CB44B9E53037439CA201BCD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47CDC4826534D52B694C5DC /* AudioToolbox.framework */; };
 		F156FC30B5E34B829E3C6ECC /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8953BF797B0401797779842 /* scannerOverlay.xib */; };
@@ -74,7 +72,9 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F67DDF18D1F145E2A68ACCDD /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = FutureShopping/config.xml; sourceTree = "<group>"; };
+		F8428A1040D84EAD90836646 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
 		F8953BF797B0401797779842 /* scannerOverlay.xib */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = file.xib; path = scannerOverlay.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +195,8 @@
 				9554825180F844A9846DB677 /* CDVBarcodeScanner.mm */,
 				B88704980F134710B88A6E19 /* zxing-all-in-one.cpp */,
 				01A70284B9A64A0EB6C43D83 /* zxing-all-in-one.h */,
+				F67DDF18D1F145E2A68ACCDD /* CDVLogger.m */,
+				F8428A1040D84EAD90836646 /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = FutureShopping/Plugins;
@@ -237,7 +239,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 510;
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5SXMJP4X76;
@@ -282,10 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
-				3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */,
-				3047A5141AB8059700498E2A /* build.xcconfig in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
-				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
 				F156FC30B5E34B829E3C6ECC /* scannerOverlay.xib in Resources */,
 				FF9D8F3B86224C0FA3084EF7 /* CDVBarcodeScanner.bundle in Resources */,
 			);
@@ -321,6 +320,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				0F45C9D82B3C4322A038B936 /* CDVBarcodeScanner.mm in Sources */,
 				F8761F0778664BB3BBDA2076 /* zxing-all-in-one.cpp in Sources */,
+				C0869E817CC148D392390762 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +355,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FutureShopping/FutureShopping-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.timvandevathorst.futureshopping;
 				PRODUCT_NAME = FutureShopping;
 				PROVISIONING_PROFILE = "";
 			};
@@ -377,6 +378,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FutureShopping/FutureShopping-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.timvandevathorst.futureshopping;
 				PRODUCT_NAME = FutureShopping;
 				PROVISIONING_PROFILE = "";
 			};
@@ -394,6 +396,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";

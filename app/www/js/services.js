@@ -79,11 +79,6 @@ angular.module('starter.services', [])
         products[products.indexOf(li)].aantal += 1;
       }
     },
-    addQR: function(li)
-    {
-      products.push(JSON.parse(li));
-      localStorage["products"] = JSON.stringify(products);
-    },
     remove: function(product) {
       products.splice(products.indexOf(product), 1);
       localStorage["products"] = JSON.stringify(products);
