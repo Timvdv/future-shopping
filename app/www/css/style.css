@@ -443,9 +443,9 @@ ion-item.item-icon.item i.ion-plus-circled {
 
 ion-item.item.afbeelding {
     border: none;
-    background: url('../img/empty.png');
-    min-height: 400px;
+    min-height: 100%;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+ion-item.item.afbeelding img {
+    width: 100%;
 }
