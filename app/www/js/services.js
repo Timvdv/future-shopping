@@ -133,12 +133,27 @@ angular.module('starter.services', [])
 .factory('ShoppingList', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var shoppingList = JSON.parse(localStorage["shoppingList"]);
+  var shoppingList = [];
+  var tutorialList = [
+    {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
+    {title: "Quaker Havermout", aantal: 2, checked: false}, 
+    {title: "Calvé Pindakaas", aantal: 1, checked: false}, 
+    {title: "AH Frambozenvla", aantal: 1, checked: false}
+  ];
+
+  if(localStorage["shoppingList"]){
+    shoppingList = JSON.parse(localStorage["shoppingList"]);
+  }
   
   return {
     all: function() {
       return shoppingList;
+    },
+    tutorialAll: function() {
+      return tutorialList;
+    },
+    tutorialRemove: function(li) {
+      tutorialList.splice(tutorialList.indexOf(li), 1);
     },
     remove: function(li) {
       shoppingList.splice(shoppingList.indexOf(li), 1);
@@ -180,7 +195,22 @@ angular.module('starter.services', [])
         localStorage["shoppingList"] = JSON.stringify(shoppingList);
         console.log(shoppingList[i]);
       }      
+    },
+    checkTutorialItem: function(li)
+    {
+      // If statements voor gekke bug. Als indexOf() 0 terug geeft, werkt de boel niet,
+      // maar als ik het zo gewoon 2x typ werkt alles dus.. is gucci.
+      if(tutorialList.indexOf(li))
+      {
+        var i = tutorialList.indexOf(li);
+        tutorialList[i].checked = !tutorialList[i].checked; 
+        console.log(tutorialList[i]);
+      }else
+      {
+        var i = tutorialList.indexOf(li);
+        tutorialList[i].checked = !tutorialList[i].checked;        
+        console.log(tutorialList[i]);
+      } 
     }
-
   };
 });
