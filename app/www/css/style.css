@@ -449,3 +449,24 @@ ion-item.item.afbeelding {
 ion-item.item.afbeelding img {
     width: 100%;
 }
+.popup-open {
+    pointer-events: auto !important;
+}
+.backdrop.visible.active {
+    opacity: 0;
+    z-index: -10;
+}
+.popup-container .popup {
+    background-color: rgba(255, 255, 255, 1);
+    border: 3px solid #387ef5;
+    border-radius: 4px;
+}
+.popup-container.ng-animate.animated-add.fadeOut-add.animated.fadeOut.animated-add-active.fadeOut-add-active.popup-showing.active {
+    visibility: visible;
+}
+.popup-container.animated.fadeOut.popup-showing.popup-hidden {
+    visibility: hidden;
+}
+.popup-container.animated.fadeOut.popup-showing.active {
+    visibility: hidden;
+}

@@ -56,14 +56,7 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
             title: title,
             subTitle: subtitle,
             scope: $scope,
-            buttons: [
-            {
-                text: '<b>Ok</b>',
-                type: 'button-positive',
-                onTap: function(e) {
-                    myPopup.close();
-                } 
-            }]
+            cssClass: 'animated fadeOut animated'
         });
     };
 
@@ -92,7 +85,7 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
     $scope.addFavorite = function(product){
         Products.addToFavorites(product);
         $ionicListDelegate.closeOptionButtons();
-        $scope.showPopup(product.title + " is aan uw favorieten toegevoegd!", "Ga naar 'mijn favorieten' om het product te bekijken.");
+        $scope.showPopup(product.title + " is aan uw favorieten toegevoegd!", "");
     }
 
     // Hoi timmie. De json van PRODUCTEN is veranderd. Er zitten nu ratings bij dus hou daar rekening mee als je nieuwe JSON probeert toe te voegen
