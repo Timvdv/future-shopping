@@ -95,6 +95,29 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
         $scope.showPopup(product.title + " is aan uw favorieten toegevoegd!", "Ga naar 'mijn favorieten' om het product te bekijken.");
     }
 
+    $scope.addProduct = function(product)
+    {
+        console.log("IN THE ADD PRODUCT with:" + product);
+
+        product = JSON.parse(product);
+        var storage = [];
+
+        if(localStorage['products'])
+        {
+            storage = JSON.parse(localStorage["products"]);
+        }
+        
+        storage.push(product);
+
+        console.log(storage);
+
+        if(!storage.indexOf(product))
+        {
+            localStorage["products"] = JSON.stringify(storage);
+            $scope.showPopup(product.title + " zit in de winkelmand!", "Ga scan meer om meer toe te voegen.");
+        }
+    }
+
     // Hoi timmie. De json van PRODUCTEN is veranderd. Er zitten nu ratings bij dus hou daar rekening mee als je nieuwe JSON probeert toe te voegen
     // VOORBEELD:
     // { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.jpg", aantal: 1, inpakTijd: 11, 
@@ -105,6 +128,8 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
     var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12, rating: [1,5,3,4,4,3,3,4,5,5]});
 
     $scope.product_data = "nothing yet";
+
+    $scope.addProduct(pr_string);
 
     $scope.scanBarcode = function()
     {
@@ -129,13 +154,14 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
      */
     $scope.$watch('product_data', function(newVal, oldVal)
     {
-        console.log(Products);
-        console.log("Product changed.");
-        
-        if(newVal != "nothing yet")
+        console.log(newVal);
+    
+        if(newVal && newVal != "nothing yet")
         {
-            console.log("new value:" + newVal);
-            Products.add(JSON.parse(newVal));    
+            console.log("in de if statement");
+            console.log("Calling add product");
+            $scope.addProduct(newVal);
+            console.log("Continue code. if its not here it failed miserably");
         }
     });
 }]);

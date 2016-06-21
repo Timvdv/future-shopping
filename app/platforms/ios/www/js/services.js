@@ -70,7 +70,10 @@ angular.module('starter.services', [])
       return products;
     },
     add: function(li) {
+      
       console.log("ik ben in de functie bitch");
+      console.log(li);
+      
       if(products.indexOf(li))
       {
         products.push(li); 
@@ -134,8 +137,10 @@ angular.module('starter.services', [])
 .factory('ShoppingList', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var shoppingList = JSON.parse(localStorage["shoppingList"]);
+  var shoppingList = [];
+  if(localStorage["shoppingList"]){
+    shoppingList = JSON.parse(localStorage["shoppingList"]);
+  }
   
   return {
     all: function() {
