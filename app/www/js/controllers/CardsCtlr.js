@@ -1,5 +1,5 @@
-angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 'ShoppingList' ,
-	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup, ShoppingList)
+angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$location' , '$ionicSlideBoxDelegate', '$ionicPopup' , 'ShoppingList' ,'$ionicListDelegate',
+	function($scope, $http, $location, $ionicSlideBoxDelegate, $ionicPopup, ShoppingList, $ionicListDelegate)
 {
 	var cardTypes = [
         { image: '../resources/android/icon/drawable-xxxhdpi-icon.png', title: 'Tutorial', content: 'Beste klant, bedankt voor het gebruiken van de FutureShopping app. U kunt de korte tutorial doorlopen door op next te klikken. Als u de tutorial nooit meer wilt zien klik dan op "Nooit meer laten zien"'},
@@ -71,6 +71,20 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
   $scope.shouldShowReorder = false;
   $scope.listCanSwipe = true;
 
+
+  $scope.list = ShoppingList.tutorialAll();
+  
+  $scope.remove = function(item) {
+    ShoppingList.tutorialRemove(item);
+  };
+
+  $scope.toggleCheckMark = function(el, li)
+  {
+    ShoppingList.checkTutorialItem(li)
+    $ionicListDelegate.closeOptionButtons();
+  }
+
+
   $scope.showPopup = function(choice) {
     $scope.data = {};
     var title;
@@ -82,37 +96,6 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
     }else
     {
       title = "Gouda kaas is verwijderd uit uw winkelmand";
-      subtitle = "";
-    }
-    // An elaborate, custom popup
-    var myPopup = $ionicPopup.show({
-      template: '',
-      title: title,
-      subTitle: subtitle,
-      scope: $scope,
-      buttons: [
-        {
-          text: '<b>Ok</b>',
-          type: 'button-positive',
-          onTap: function(e) {
-            myPopup.close();
-          } 
-        }
-      ]
-    });
-   };
-
-   $scope.showPopup2 = function(choice) {
-    $scope.data = {};
-    var title;
-    var subtitle;
-    if(choice == 1)
-    {
-      title = "Product is afgestreept aan uw boodschappenlijstje!";
-      subtitle = "";
-    }else
-    {
-      title = "product is verwijderd uit uw boodschappenlijstje";
       subtitle = "";
     }
     // An elaborate, custom popup
