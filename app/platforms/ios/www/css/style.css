@@ -214,8 +214,26 @@ span.bold{
     display: none;
 }
 
+.addProduct .list .item.item-input {
+    padding: 15px 70px;
+    background: #f7f7f7;
+}
+
 .addProduct .item.item-input.item-select {
-    padding: 25px !important;
+    padding: 25px 70px !important;
+}
+
+.addProduct span {
+    font-weight: 800;
+}
+
+input#productInput {
+    background: #f7f7f7;
+}
+
+select#aantalInput {
+    font-size: 20px;
+    background: #f7f7f7;
 }
 
 .addProduct option {
@@ -405,7 +423,20 @@ ion-content.tutorial {
 .rating i.ion-ios-star-outline {
     font-size: 26px;
 }
-
+.rating i.ion-ios-star {
+    font-size: 26px;
+}
 .checked-Item {
     text-decoration: line-through;
+}
+.averageRating {
+    text-align: center;
+    padding-top: 15px;
+}
+ion-item.item-icon.item i.ion-plus-circled {
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
 }

@@ -12,6 +12,16 @@
     <link href="css/cards.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
 
+<!--Dit zorgt ervoor dat de header weg is wanneer je hem tussen je apps zet met safari. (bij chrome op android kan dat ook volgens mij @timvdh)
+    Je moet alleen wel je caching leegmaken voordat je hem tussen de apps zet, anders werkt het niet. scumbag browsers. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <link rel="apple-touch-icon" href="./resources/ios/icon/icon-76@2x.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/ios/icon/icon-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/ios/icon/icon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resources/ios/icon/icon-152.png">
+    <link rel="apple-touch-startup-image" href="resources/ios/splash/Default-568h@2x~iphone.png">
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet"> -->
     
@@ -28,15 +38,21 @@
 
     <script src="js/controllers.js"></script>
     
-    <!-- Custom controllers -> door een error werkt dit nog niet.. jammeer-->
-    <script src="js/controllers/ShoppingCart.js"></script>
-    <script src="js/controllers/Settings.js"></script>
+    <!-- Custom controllers  Credits naar Sven-->
+    <script src="js/controllers/AddDataCtrl.js"></script>
+    <script src="js/controllers/CardsCtlr.js"></script>
+    <script src="js/controllers/FavoritesCtrl.js"></script>
+    <script src="js/controllers/ProductDetailCtrl.js"></script>
+    <script src="js/controllers/SettingsCtrl.js"></script>
+    <script src="js/controllers/ShoppingCartCtrl.js"></script>
+    <script src="js/controllers/ShoppingListCtrl.js"></script>
+    <script src="js/controllers/UserSettings.js"></script>
     
     <!-- Services -->
     <script src="js/services.js"></script>
 
   </head>
-  <body ng-app="starter" class="platform-android platform-cordova platform-webview">
+  <body ng-app="starter">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
