@@ -441,6 +441,23 @@ ion-item.item-icon.item i.ion-plus-circled {
     padding-left: 5px;
 }
 
+
+/* Style voor checkout */
+
+.annuleren {
+    float: left;
+    width: 45%
+}
+
+.betalen {
+    float: right;
+    width: 45%;
+}
+
+.container-checkout {
+    padding: 15px;
+}
+
 ion-item.item.afbeelding {
     border: none;
     min-height: 100%;
@@ -449,3 +466,4 @@ ion-item.item.afbeelding {
 ion-item.item.afbeelding img {
     width: 100%;
 }
+
