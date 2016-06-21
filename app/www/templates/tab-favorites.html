@@ -10,6 +10,9 @@
         <ion-option-button class="button-assertive" ng-click="remove(fav)">
           Delete
         </ion-option-button>
+        <ion-item class="item afbeelding" ng-show="!favorites.length">
+          <img src="img/empty.png" alt="empty cart">
+        </ion-item>
       </ion-item>
     </ion-list>
   </ion-content>
