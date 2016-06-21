@@ -129,6 +129,7 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
      */
     $scope.$watch('product_data', function(newVal, oldVal)
     {
+        console.log(Products);
         console.log("Product changed.");
         
         if(newVal != "nothing yet")
