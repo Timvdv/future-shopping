@@ -26,7 +26,7 @@ angular.module('starter.controllers').controller('AddDataCtlr', ['$scope', '$htt
 	    rating: [2,1,2,2,3,4,]
 	  },
 	  { id: 2, title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8, 
-	    rating: [1,5,,4,2,5]
+	    rating: [1,5,4,2,5]
 	  }, 
 	  { id: 3, title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15, 
 	    rating: [1,5,4,4,4,4,5,5]
