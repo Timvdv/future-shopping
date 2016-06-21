@@ -38,15 +38,7 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
       title: 'Bedankt voor uw beoordeling!',
       subTitle: 'Uw mede klanten zullen uw mening zeer op prijs stellen.',
       scope: $scope,
-      buttons: [
-        {
-          text: '<b>Ok</b>',
-          type: 'button-positive',
-          onTap: function(e) {
-            myPopup.close();
-          } 
-        }
-      ]
+      cssClass: 'animated fadeOut animated'
     });
   };
 }]);
