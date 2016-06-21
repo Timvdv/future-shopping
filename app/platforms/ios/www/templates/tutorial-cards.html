@@ -59,28 +59,15 @@
           Boodschappenlijstje
         </div>
         <ion-list ng-controller="Cards"
+          ng-repeat="item in list"
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
-              <h2>Kaas</h2> <p>2x</p>      
-              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
+              <h2>{{item.title}}</h2> <p>{{item.aantal}}</p>      
+              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="toggleCheckMark($event, item)">
               </ion-option-button>
-              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
-              </ion-option-button>
-            </ion-item>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
-              <h2>Yoghurt</h2> <p>1x</p>      
-              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
-              </ion-option-button>
-              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
-              </ion-option-button>
-            </ion-item>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
-              <h2>Cornflakes</h2> <p>2x</p>      
-              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
-              </ion-option-button>
-              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
+              <ion-option-button class="button-assertive ion-close-round" ng-click="remove(item)">
               </ion-option-button>
             </ion-item>
           </ion-list>
