@@ -7,9 +7,7 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
         { image: 'img/goudakaas.JPG', title: 'Stap 2', content: 'Meer info nodig over een product? Swipe naar links.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 3', content: 'Er kan ook een boodschappenlijst gevuld worden. Druk op product toevoegen etc. etc. etc.'},
         { image: 'img/goudakaas.JPG', title: 'Stap 4', content: 'Er kunnen instellingen gevuld worden voor het afrekenen, Thuisbezorgen etc. etc. etc.'},
-    ];
-
-    
+    ];    
  
   console.log('ahoy');
 
@@ -28,51 +26,18 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
       $scope.settings.showAddButton = !$scope.settings.showAddButton;
     }
 
-    $scope.add = function($event)
-    {
-      var name = document.getElementById("productInput");
-      var aantal = document.getElementById("aantalInput");
-      if(name.value != "" && aantal.value != "Kies aantal")
-      {
-        var item = {title: name.value, aantal: aantal.value, checked: false};
-        console.log(item);
-        ShoppingList.add(item);
-        $scope.toggleInput();
-        name.value = "";
-        aantal.value = 1;
-      } else {
-        $scope.showPopup();
-        $event.preventDefault();
-      }
-    };
-
-    $scope.showPopup = function() {
-      $scope.data = {};
-
-      // An elaborate, custom popup
-      var myPopup = $ionicPopup.show({
-        template: '',
-        title: 'Vul a.u.b alle velden in',
-        subTitle: 'Controleer goed of je alle velden hebt ingevuld',
-        scope: $scope,
-        buttons: [
-          {
-            text: '<b>Ok</b>',
-            type: 'button-positive',
-            onTap: function(e) {
-              myPopup.close();
-            } 
-          }
-        ]
-      });
-    };
-
     $scope.cards = [];
  
     $scope.addCard = function(i) {
         var newCard = cardTypes[i];
         newCard.id = i;
         $scope.cards.push(angular.extend({}, newCard));
+    }
+
+    $scope.toggleCheckMark = function(el, item)
+    {
+      ShoppingList.checkItem(item);
+      $ionicListDelegate.closeOptionButtons();
     }
 
     $scope.nextSlide = function() {
@@ -117,6 +82,37 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
     }else
     {
       title = "Gouda kaas is verwijderd uit uw winkelmand";
+      subtitle = "";
+    }
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '',
+      title: title,
+      subTitle: subtitle,
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            myPopup.close();
+          } 
+        }
+      ]
+    });
+   };
+
+   $scope.showPopup2 = function(choice) {
+    $scope.data = {};
+    var title;
+    var subtitle;
+    if(choice == 1)
+    {
+      title = "Product is afgestreept aan uw boodschappenlijstje!";
+      subtitle = "";
+    }else
+    {
+      title = "product is verwijderd uit uw boodschappenlijstje";
       subtitle = "";
     }
     // An elaborate, custom popup

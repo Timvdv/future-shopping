@@ -441,6 +441,7 @@ ion-item.item-icon.item i.ion-plus-circled {
     padding-left: 5px;
 }
 
+
 /* Style voor checkout */
 
 .annuleren {
@@ -456,3 +457,13 @@ ion-item.item-icon.item i.ion-plus-circled {
 .container-checkout {
     padding: 15px;
 }
+
+ion-item.item.afbeelding {
+    border: none;
+    min-height: 100%;
+    width: 100%;
+}
+ion-item.item.afbeelding img {
+    width: 100%;
+}
+

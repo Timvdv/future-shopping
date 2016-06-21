@@ -47,7 +47,7 @@
         </ion-list>
         </div>
         <div class="slideContent">
-          Een product verwijderen of toevoegen aan favorieten? Swipe naar rechts, probeer het maar!
+          Een product verwijderen of toevoegen aan favorieten? Swipe naar links, probeer het maar!
         </div>
         <div class="slideButtons">
           <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
@@ -62,48 +62,30 @@
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" ng-repeat="item in shoppingList" type="item-text-wrap">
-              <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>      
-              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="toggleCheckMark($event, item)">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
+              <h2>Kaas</h2> <p>2x</p>      
+              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
               </ion-option-button>
-              <ion-option-button class="button-assertive ion-close-round" ng-click="remove(item)">
+              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
+              </ion-option-button>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
+              <h2>Yoghurt</h2> <p>1x</p>      
+              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
+              </ion-option-button>
+              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
+              </ion-option-button>
+            </ion-item>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" type="item-text-wrap">
+              <h2>Cornflakes</h2> <p>2x</p>      
+              <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="showPopup2(1)">
+              </ion-option-button>
+              <ion-option-button class="button-assertive ion-close-round" ng-click="showPopup2(2)">
               </ion-option-button>
             </ion-item>
           </ion-list>
-            <div ng-class="settings.showFields ? '' : 'hide'">
-                <ion-list class="addProduct">
-                <label class="item item-input item-stacked-label">
-                  <span class="input-label">Naam product</span>
-                  <input type="text" name="productName" placeholder="Vul hier de naam van het product in." id="productInput">
-                </label>
-                <label class="item item-input item-select">
-                  <span class="input-label">Kies aantal</span>
-                  <select id="aantalInput">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                  </select>
-                </label>
-                <div style="text-align: center; padding-top:10px">
-                  <a class="button button-balanced" ng-click="add($event)">
-                    Voeg toe aan boodschappenlijst
-                  </a>  
-                  <button class="button button-light ion-close-round" ng-click="toggleInput()"></button>
-                </div>
-            </div> 
-            <ion-item class="item-icon"  type="item-text-wrap" ng-class="settings.showFields ? 'hide' : ''" ng-click="toggleInput()">
-                  <p style="text-align: center">Voeg product toe 
-                  <i class="ion-plus-circled"></i></p>          
-            </ion-item>
         <div class="slideContent">
-          Voor het vullen van uw boodschappenlijst, kunt u klikken op "Voeg product toe". Door naar rechts te swipen kunt u producten verwijderen of afstrepen van uw lijst. Probeer het maar!
+          Door naar links te swipen kunt u producten verwijderen of afstrepen van uw lijst. Probeer het maar!
         </div>
         <div class="slideButtons">
           <button class="button button-stable prev" ng-click="previousSlide()">Vorige stap</button>
