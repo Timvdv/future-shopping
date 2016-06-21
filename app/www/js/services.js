@@ -70,6 +70,10 @@ angular.module('starter.services', [])
       return products;
     },
     add: function(li) {
+      
+      console.log("ik ben in de functie bitch");
+      console.log(li);
+      
       if(products.indexOf(li))
       {
         products.push(li); 

@@ -40,7 +40,7 @@ angular.module('starter.controllers').controller('AddDataCtlr', ['$scope', '$htt
 	  { id: 6, title: 'La Chouffe', prijsFrontEnd: "2,45", prijs: 2.45, inhoud: "2 liter", thumbnail:"img/lachouffe.JPG", aantal: 1, inpakTijd: 13, 
 	    rating: [1,1,2,4,3,4,5,5]
 	  },
-	  { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.jpg", aantal: 1, inpakTijd: 11, 
+	  { id: 7, title: 'Big Americans pizza', prijsFrontEnd: "2.95", prijs: 2.95, inhoud: "435 g", thumbnail:"img/pizza.JPG", aantal: 1, inpakTijd: 11, 
 	    rating: [1,5,3,5,5]
 	  }
 	];
