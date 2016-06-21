@@ -445,13 +445,22 @@ ion-item.item-icon.item i.ion-plus-circled {
 /* Style voor checkout */
 
 .annuleren {
+    margin-top: 20px;
     float: left;
     width: 45%
 }
 
 .betalen {
+    margin-top: 20px;
     float: right;
     width: 45%;
+}
+
+.checkoutview {
+    margin-top: -55px;
+}
+.totaalbedrag {
+    font-size: 32px;
 }
 
 .container-checkout {
