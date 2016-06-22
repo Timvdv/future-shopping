@@ -466,6 +466,8 @@ i.ion-ios-star-half {
 
 .container-checkout {
     padding: 15px;
+    height: 100vh;
+    position: relative;
 }
 
 ion-item.item.afbeelding {
@@ -507,12 +509,9 @@ ion-item.item.afbeelding img {
 }
 img.qrcode-afrekenen {
     width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
     margin: 0 auto;
-    transform: translateY(-50%);
+    display: block;
+    padding-top: 50px;
 }
 h3.title {
     text-align: center;
@@ -522,33 +521,24 @@ a.button.button-assertive.annuleren-qrpage {
     line-height: 47px;
     margin: 0 auto;
     display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
     width: 80%;
     box-sizing: border-box;
-    right: 0;
+    margin-top: 50px;
 }
 a.button.button-balanced.annuleren-qrpage {
     padding: 0px 20px;
     line-height: 47px;
     margin: 0 auto;
     display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
     width: 80%;
     box-sizing: border-box;
-    right: 0;
+    margin-top: 50px;
 }
 img.betaald {
-    width: 170px;   
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
+    width: 170px;
     margin: 0 auto;
-    transform: translateY(-50%);
+    display: block;
+    padding-top: 50px;
 }
 p.incasso {
     padding: 40px 10px 10px 10px;
