@@ -44,8 +44,8 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 		if(name.value != "" && aantal.value != "Kies aantal")
 		{
 		  var item = {title: name.value, aantal: aantal.value, checked: false};
-		  console.log(item);
 		  ShoppingList.add(item);
+		  $scope.list = ShoppingList.all();
 		  $scope.toggleInput();
 		  name.value = "";
 		  aantal.value = 1;
@@ -100,7 +100,11 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 			myPopup.close();
 			ShoppingList.clearList();
 			$scope.list = [];
-			//location.reload();
+			setTimeout(function()
+			{
+				location.reload();	
+			}, 300)
+			
 		      } 
 		    }
 		  ]
