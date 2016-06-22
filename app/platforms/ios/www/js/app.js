@@ -69,16 +69,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.list-add', {
-    url: '/list/add',
-    views: {
-      'tab-list': {
-        templateUrl: 'templates/list-add.html',
-        controller: 'ShoppingListCtrl'
-      }
-    }
-  })
-
   .state('tab.favorites', {
       url: '/favorites',
       views: {
@@ -115,7 +105,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/checkout',
     templateUrl: 'templates/checkout.html',
     controller: 'CheckoutCtrl'
-  });
+  })
+  .state('payment', {
+    url: '/payment',
+    templateUrl: 'templates/QRCode-page.html',
+    controller: 'QRCodeCtrl'
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });
