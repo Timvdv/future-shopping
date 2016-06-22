@@ -104,7 +104,6 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 			{
 				location.reload();	
 			}, 300)
-			
 		      } 
 		    }
 		  ]

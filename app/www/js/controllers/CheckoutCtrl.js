@@ -1,7 +1,5 @@
-angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$http', '$location' , 'Products', function($scope, $http, $location, Products)
+angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$http', '$location' , 'Products', '$rootScope', function($scope, $http, $location, Products, $rootScope)
 {
-	console.log("Checkout Controller. GO HAM CASPER!");
-
 	// var totalprice = 0;
 	$scope.products = Products.all();
 	$scope.totalPrice = 0;
@@ -19,7 +17,6 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
         $scope.totalPrice = Math.round(totalPrice * 100) / 100;
         $scope.totalTime = secondsToTime(totalTime);
         
-
         $scope.totalPrice = $scope.totalPrice.toFixed(2).split('.')[0] + ',' + $scope.totalPrice.toFixed(2).split('.')[1]
     }
 
@@ -53,5 +50,11 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
     $scope.automatisch = {
         Betaald: 'Er is een automatisch incasso gedaan, Bedankt voor het shoppen!'
     };
+
+    $scope.pay = function(payment)
+    {
+        $rootScope.payment = payment;
+        console.log(payment);
+    }
 
 }]);

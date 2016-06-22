@@ -13,9 +13,9 @@
       <h3>Hoe wilt u betalen?</h3>
 
       <!-- <ion-radio ng-model="choice" ng-value="'A'">Optie uit instellingen</ion-radio> -->
-      <ion-radio ng-model="payment.choice" ng-value="bankieren">Internetbankieren</ion-radio>
-      <ion-radio ng-model="payment.choice" ng-value="pinnen">PIN</ion-radio>
-      <ion-radio ng-model="payment.choice" ng-value="automatisch">Automatische incasso (Instellingen)</ion-radio>
+      <ion-radio ng-model="payment.choice" ng-value="bankieren" ng-change="pay(payment.choice)">Internetbankieren</ion-radio>
+      <ion-radio ng-model="payment.choice" ng-value="pinnen" ng-change="pay(payment.choice)">PIN</ion-radio>
+      <ion-radio ng-model="payment.choice" ng-value="automatisch" ng-change="pay(payment.choice)">Automatische incasso (Instellingen)</ion-radio>
         <tt>info = {{payment.choice | json}}</tt><br/>
         <div><img src="{{payment.pinnen}}" alt=""></div>
         <a href="#/shopping-cart" class="button button-assertive annuleren">Annuleren</a>
