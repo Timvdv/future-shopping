@@ -1,24 +1,24 @@
 <ion-view class="checkoutview" view-title="Afrekenen" hide-nav-bar="true">
 
   <ion-content>
-  <!-- <div class="bar bar-header bar-light">
-  		<h1 class="title">Afrekenen</h1>
-	</div> -->
-  <div class="container-checkout">
-  <h1>Totaalbedrag: {{totalPrice}}</h1>
-  <p>Hoe wilt u betalen?</p>
+    <!-- <div class="bar bar-header bar-light">
+    		<h1 class="title">Afrekenen</h1>
+  	</div> -->
+    <div class="container-checkout">
+      <h1>Totaalbedrag: {{totalPrice}}</h1>
+      <h1>Inpaktijd: {{totalTime.m}}:{{totalTime.s}}</h1>
+      <p>Hoe wilt u betalen?</p>
 
-<ion-radio ng-model="choice" ng-value="'A'">Optie uit instellingen</ion-radio>
-<ion-radio ng-model="choice" ng-value="'B'">Internetbankieren</ion-radio>
-<ion-radio ng-model="choice" ng-value="'C'">PIN</ion-radio>
-<ion-radio ng-model="choice" ng-value="'D'">Automatische incasso</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'A'">Optie uit instellingen</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'B'">Internetbankieren</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'C'">PIN</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'D'">Automatische incasso</ion-radio>
 
-      <a href="#/shopping-cart" class="button button-assertive annuleren"></i>Annuleren</a>
+            <a href="#/shopping-cart" class="button button-assertive annuleren">Annuleren</a>
 
-<button class="button button-balanced betalen">
-  Betalen
-</button>
-</div>
-
+        <a href="#/payment" class="button button-balanced betalen">
+          Betalen
+        </a>
+    </div>
   </ion-content>
 </ion-view> 

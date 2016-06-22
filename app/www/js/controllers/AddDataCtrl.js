@@ -166,16 +166,16 @@ angular.module('starter.controllers').controller('AddDataCtlr', ['$scope', '$htt
 	}];
 
 	var favorites = [
-	  { id: 1, title: 'Gouda Kaas 48+', prijsFrontEnd: "4,50", prijs: 4.50, inhoud: "2kg", thumbnail:"img/goudakaas.JPG", aantal: 1, inpakTijd: 10, rating: 3},
-	  { id: 2,title: 'Calvé Pindakaas', prijsFrontEnd: "2,30", prijs: 2.30, inhoud: "350 g", thumbnail:"img/pindakaas.JPG", aantal: 1 , inpakTijd: 8, rating: 4}, 
-	  { id: 3,title: 'Quaker Havermout', prijsFrontEnd: "3,50", prijs: 3.50, inhoud: "550 g", thumbnail:"img/havermout.JPG", aantal: 1, inpakTijd: 15, rating: 5}
+	  { "id": 1, "title": "Gouda Kaas 48+", "prijsFrontEnd": "4,50", "prijs": 4.50, "inhoud": "2kg", "thumbnail":"img/goudakaas.JPG", "aantal": 1, "inpakTijd": 10, "rating": [2, 1, 2, 2, 3, 4]},
+	  { "id": 2, "title": "Calvé Pindakaas", "prijsFrontEnd": "2,30", "prijs": 2.30, "inhoud": "350 g", "thumbnail":"img/pindakaas.JPG", "aantal": 1 , "inpakTijd": 8, "rating": [1, 5, 4, 2, 5]}, 
+	  { "id": 3, "title": "Quaker Havermout", "prijsFrontEnd": "3,50", "prijs": 3.50, "inhoud": "550 g", "thumbnail":"img/havermout.JPG", "aantal": 1, "inpakTijd": 15, "rating": [1, 5, 4, 4, 4, 4, 5, 5]}
 	];
 
 	var shoppingList = [
-	  {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
-	  {title: "Quaker Havermout", aantal: 2, checked: false}, 
-	  {title: "Calvé Pindakaas", aantal: 1, checked: false}, 
-	  {title: "AH Frambozenvla", aantal: 1, checked: false}
+	  {"title": "Gouda Kaas 48+", "aantal": 1, "checked": false}, 
+	  {"title": "Quaker Havermout", "aantal": 2, "checked": false}, 
+	  {"title": "Calvé Pindakaas", "aantal": 1, "checked": false}, 
+	  {"title": "AH Frambozenvla", "aantal": 1, "checked": false}
 	];
 
 	localStorage["products"] = JSON.stringify(products);

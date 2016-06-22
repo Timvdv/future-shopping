@@ -17,14 +17,13 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
         }
 
         $scope.totalPrice = Math.round(totalPrice * 100) / 100;
-        //$scope.totalTime = secondsToTime(totalTime);
+        $scope.totalTime = secondsToTime(totalTime);
+        
 
         $scope.totalPrice = $scope.totalPrice.toFixed(2).split('.')[0] + ',' + $scope.totalPrice.toFixed(2).split('.')[1]
-        //document.getElementById('price').innerHTML =  $scope.totalPrice;
-        //$scope.updateTotals();
     }
 
-    // Berekenen wat de totale prijs is, de eerste keer dat de pagina geladen wordt.
+    // Berekenen wat de totale prijs en tijd is, de eerste keer dat de pagina geladen wordt.
     $scope.calculateData();
 
 }]);

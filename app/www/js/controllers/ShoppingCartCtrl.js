@@ -37,12 +37,7 @@ function($scope, $http, $location, Products, $ionicListDelegate, $ionicPopup)
     // Voeg het aantal van een product toe.
     $scope.addQuantity = function(item)
     {
-        for (var i = 0; i <   $scope.products.length; i++) {
-            if(item.title == $scope.products[i].title)
-            {
-                $scope.products[i].aantal += 1;
-            }
-        }
+        Products.addQuantity(item);
         $scope.calculateData();
     }
 

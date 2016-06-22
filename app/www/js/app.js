@@ -115,7 +115,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/checkout',
     templateUrl: 'templates/checkout.html',
     controller: 'CheckoutCtrl'
-  });
+  })
+  .state('payment', {
+    url: '/payment',
+    templateUrl: 'templates/QRCode-page.html',
+    controller: 'QRCodeCtrl'
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });

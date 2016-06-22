@@ -114,10 +114,6 @@ angular.module('starter.services', [])
       }
     },
     addToFavorites: function(product){
-      if(localStorage["favorites"])
-      {
-          favorites = JSON.parse(localStorage["favorites"]);  
-      }
       var result;
 
       if(favorites) {
@@ -139,6 +135,7 @@ angular.module('starter.services', [])
       {
         favorites = JSON.parse(localStorage["favorites"]);  
       }
+      console.log(favorites);
       return favorites;
     },
     removeFavorite: function(product) {
@@ -152,6 +149,24 @@ angular.module('starter.services', [])
           return products[i];
         }
       }
+    },
+    addQuantity: function(li)
+    {
+      var result;
+
+      if(products) {
+        result = products.filter(function(v) {
+            return v.id === li.id;
+        })[0];
+      }
+            
+      if(result) {
+        products[getIndexOf(products, result.id, "id")].aantal += 1;        
+      } else {
+        products.push(li); 
+      }
+
+      localStorage["products"] = JSON.stringify(products);
     }
   };
 })
