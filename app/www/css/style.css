@@ -442,7 +442,9 @@ ion-item.item-icon.deleteList.item {
 
 
 /* Style voor checkout */
-
+i.ion-ios-star-half {
+    font-size: 26px;
+}
 .annuleren {
     margin-top: 20px;
     float: left;
