@@ -5,14 +5,17 @@
     		<h1 class="title">Afrekenen</h1>
   	</div> -->
     <div class="container-checkout">
-      <h1>Totaalbedrag: {{totalPrice}}</h1>
-      <h1>Inpaktijd: {{totalTime.m}}:{{totalTime.s}}</h1>
-      <p>Hoe wilt u betalen?</p>
+      <h1 class="title">Afrekenen</h1>
+      <div class="break"></div>
+      <h3>Totaalbedrag: <span>€{{totalPrice}}</span></h3>
+      <h3>Inpaktijd: <span>{{totalTime.m}} min {{totalTime.s}} sec</span></h3>
+      <div class="break"></div>
+      <h3>Hoe wilt u betalen?</h3>
 
-      <ion-radio ng-model="choice" ng-value="'A'">Optie uit instellingen</ion-radio>
-      <ion-radio ng-model="choice" ng-value="'B'">Internetbankieren</ion-radio>
-      <ion-radio ng-model="choice" ng-value="'C'">PIN</ion-radio>
-      <ion-radio ng-model="choice" ng-value="'D'">Automatische incasso</ion-radio>
+      <!-- <ion-radio ng-model="choice" ng-value="'A'">Optie uit instellingen</ion-radio> -->
+      <ion-radio ng-model="choice" ng-value="'A'">Internetbankieren</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'B'">PIN</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'C'">Automatische incasso (Instellingen)</ion-radio>
 
             <a href="#/shopping-cart" class="button button-assertive annuleren">Annuleren</a>
 

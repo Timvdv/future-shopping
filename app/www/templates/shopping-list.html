@@ -4,6 +4,10 @@
     show-delete="shouldShowDelete"
     show-reorder="shouldShowReorder"
     can-swipe="listCanSwipe">
+      <ion-item class="item-icon deleteList"  type="item-text-wrap" ng-hide="!list.length" ng-click="emptyList()">
+        <p style="text-align: center; color: #ff0000;">Verwijder lijst 
+        <i class="ion-trash-a"></i></p>          
+      </ion-item>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-class="item.checked ? 'checked-Item': ''" ng-repeat="item in list" type="item-text-wrap">
         <h2>{{item.title}}</h2> <p>{{item.aantal}}x</p>      
         <ion-option-button ng-class="item.checked ? 'button-positive ion-refresh' : 'button-balanced ion-checkmark-round'" ng-click="toggleCheckMark($event, item)">
@@ -41,14 +45,11 @@
           </div>
       </div> 
 
-
       <ion-item class="item-icon"  type="item-text-wrap" ng-class="settings.showFields ? 'hide' : ''" ng-click="toggleInput()">
             <p style="text-align: center">Voeg product toe 
             <i class="ion-plus-circled"></i></p>          
       </ion-item>
-      <div style="text-align: center; font-size: 40px;">
-        <i class="ion-trash-a" ng-click="emptyPopup()"></i>
-      </div>
+
 
   </ion-content>
 </ion-view>

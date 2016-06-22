@@ -429,12 +429,15 @@ body.platform-ios.platform-cordova:not(.fullscreen) .scroll-content
     text-align: center;
     padding-top: 15px;
 }
-ion-item.item-icon.item i.ion-plus-circled {
+ion-item.item-icon.item i.ion-plus-circled, ion-item.item-icon.item i.ion-trash-a {
     font-size: 24px;
     position: relative;
     display: inline-block;
     vertical-align: middle;
     padding-left: 5px;
+}
+ion-item.item-icon.deleteList.item {
+    border: none;
 }
 
 
@@ -471,7 +474,14 @@ ion-item.item.afbeelding {
 ion-item.item.afbeelding img {
     width: 100%;
 }
+.container-checkout h1.title {
+    text-align: center;
+}
+.container-checkout .break {
+    padding-bottom: 10px;
+}
 
+/* end checkout style */ 
 .popup-open {
     pointer-events: auto !important;
 }
