@@ -24,28 +24,28 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
     $scope.calculateData();
 
     $scope.bankieren = {
-        "Banken" : [
+        Banken : [
             {
                 BankNaam: 'ING',
-                Img: '../img/ing.png'
+                Img: 'img/ing.png'
             },
             {
                 BankNaam: 'RABO',
-                Img: '../img/rabo.png'
+                Img: 'img/rabo.jpg'
             },
             {
                 BankNaam: 'ABO-AMRO',
-                Img: '../img/abn.png'
+                Img: 'img/abnamro.png'
             },
             {
                 BankNaam: 'Bunq',
-                Img: '../img/bunq.png'
+                Img: 'img/bunq.png'
             }
         ]
 
     };
     $scope.pinnen = {
-        QRCode: '../img/QR-code.jpg'
+        Img: 'img/QR-code.jpg'
     };
     $scope.automatisch = {
         Betaald: 'Er is een automatisch incasso gedaan, Bedankt voor het shoppen!'
