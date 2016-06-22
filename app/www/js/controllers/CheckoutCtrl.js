@@ -26,4 +26,32 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
     // Berekenen wat de totale prijs en tijd is, de eerste keer dat de pagina geladen wordt.
     $scope.calculateData();
 
+    $scope.bankieren = {
+        "Banken" : [
+            {
+                BankNaam: 'ING',
+                Img: '../img/ing.png'
+            },
+            {
+                BankNaam: 'RABO',
+                Img: '../img/rabo.png'
+            },
+            {
+                BankNaam: 'ABO-AMRO',
+                Img: '../img/abn.png'
+            },
+            {
+                BankNaam: 'Bunq',
+                Img: '../img/bunq.png'
+            }
+        ]
+
+    };
+    $scope.pinnen = {
+        QRCode: '../img/QR-code.jpg'
+    };
+    $scope.automatisch = {
+        Betaald: 'Er is een automatisch incasso gedaan, Bedankt voor het shoppen!'
+    };
+
 }]);

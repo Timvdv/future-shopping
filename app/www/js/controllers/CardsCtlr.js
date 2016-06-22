@@ -98,15 +98,7 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
       title: title,
       subTitle: subtitle,
       scope: $scope,
-      buttons: [
-        {
-          text: '<b>Ok</b>',
-          type: 'button-positive',
-          onTap: function(e) {
-            myPopup.close();
-          } 
-        }
-      ]
+      cssClass: 'animated fadeOut animated'
     });
    };
 }]);
