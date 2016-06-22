@@ -100,7 +100,7 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 			myPopup.close();
 			ShoppingList.clearList();
 			$scope.list = [];
-			location.reload();
+			//location.reload();
 		      } 
 		    }
 		  ]
