@@ -74,4 +74,36 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 		  ]
 		});
 	};
+
+	$scope.emptyList = function() {
+		$scope.data = {};
+
+		// An elaborate, custom popup
+		var myPopup = $ionicPopup.show({
+		  template: '',
+		  title: 'Weet je zeker dat je de boodschappenlijst wilt legen?',
+		  scope: $scope,
+		  buttons: [
+		    {
+		      text: '<b>Annuleer</b>',
+		      type: 'button-assertive',
+		      onTap: function(e) {
+		        myPopup.close();
+		      } 
+		    },
+		    {
+		      text: '<b>Ok</b>',
+		      type: 'button-balanced',
+		      onTap: function(e) {
+		        myPopup.close();
+		        $scope.emptyShoppingList();
+		      } 
+		    }
+		  ]
+		});
+	};
+
+	$scope.emptyShoppingList = function() {
+		ShoppingList.clearList();
+	};
 }]);
