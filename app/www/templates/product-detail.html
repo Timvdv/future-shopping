@@ -22,12 +22,22 @@
         Notificatie bij passeren van product.
         </ion-toggle>
     </ion-list>
+
+    <!-- WORK IN PROGRESS -->
+    <!-- || averageRating() >= 0.5 ? 'ion-ios-star-half' : 'ion-ios-star-outline' -->
+    <!-- heb dit online gevonden... hhmmm intredasting... 
+          <div ng-class="apt.name.length >= 15 ? 'col-md-12' : (apt.name.length >= 10 ? 'col-md-6' : 'col-md-4')"></div> -->
     <div class="rating"> 
-      <i ng-class="averageRating() > 0 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(1)"></i>
+      <i id="1star" class="ion-ios-star-outline" ng-click="addRating(1)"></i>
+      <i id="2star" class="ion-ios-star-outline" ng-click="addRating(2)"></i>
+      <i id="3star" class="ion-ios-star-outline" ng-click="addRating(3)"></i>
+      <i id="4star" class="ion-ios-star-outline" ng-click="addRating(4)"></i>
+      <i id="5star" class="ion-ios-star-outline" ng-click="addRating(5)"></i>
+      <!-- <i ng-class="averageRating() > 0 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(1)"></i>
       <i ng-class="averageRating() > 1 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(2)"></i>
       <i ng-class="averageRating() > 2 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(3)"></i>
       <i ng-class="averageRating() > 3 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(4)"></i>
-      <i ng-class="averageRating() > 4 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(5)"></i>
+      <i ng-class="averageRating() > 4 ? 'ion-ios-star' : 'ion-ios-star-outline'" ng-click="addRating(5)"></i> -->
     </div>
     <div class="averageRating">
       <span>{{averageRating()}} gemiddeld</span> 

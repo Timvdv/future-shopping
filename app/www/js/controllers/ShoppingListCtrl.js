@@ -2,7 +2,7 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 	function($scope, $http, $location, $stateParams, ShoppingList, $ionicPopup, $timeout, $ionicListDelegate)
 {
 	$scope.list = ShoppingList.all();
-		$scope.remove = function(item) {
+	$scope.remove = function(item) {
 		ShoppingList.remove(item);
 	};
 
@@ -75,7 +75,7 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 		});
 	};
 
-	$scope.emptyList = function() {
+	$scope.emptyPopup = function() {
 		$scope.data = {};
 
 		// An elaborate, custom popup
@@ -105,5 +105,6 @@ angular.module('starter.controllers').controller('ShoppingListCtrl', ['$scope', 
 
 	$scope.emptyShoppingList = function() {
 		ShoppingList.clearList();
+		$scope.list = ShoppingList.all();
 	};
 }]);
