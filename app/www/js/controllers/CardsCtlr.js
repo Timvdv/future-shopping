@@ -34,12 +34,6 @@ angular.module('starter.controllers').controller('Cards', ['$scope', '$http', '$
         $scope.cards.push(angular.extend({}, newCard));
     }
 
-    $scope.toggleCheckMark = function(el, item)
-    {
-      ShoppingList.checkItem(item);
-      $ionicListDelegate.closeOptionButtons();
-    }
-
     $scope.nextSlide = function() {
       $ionicSlideBoxDelegate.next();
     }
