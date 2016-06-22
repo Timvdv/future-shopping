@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		0F45C9D82B3C4322A038B936 /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9554825180F844A9846DB677 /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -24,6 +23,11 @@
 		F156FC30B5E34B829E3C6ECC /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8953BF797B0401797779842 /* scannerOverlay.xib */; };
 		F8761F0778664BB3BBDA2076 /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B88704980F134710B88A6E19 /* zxing-all-in-one.cpp */; };
 		FF9D8F3B86224C0FA3084EF7 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 40BC996A5F014183AA95B05C /* CDVBarcodeScanner.bundle */; };
+		C68085DFE24C4BAD9BE39D70 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E517C2AC5BED4859A73B46B4 /* libzbar.a */; };
+		A46050EF02474540821FB24D /* CsZBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6573224B34E2401C99B70977 /* CsZBar.m */; };
+		D1B4C1959EEC41C98EB90B3D /* AlmaZBarReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE06DE0696D24A6AAFFEC481 /* AlmaZBarReaderViewController.m */; };
+		224035A984AE439B91480A09 /* CsZBarScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF833BD0641B42839D8F4A73 /* CsZBarScanView.xib */; };
+		762700C5EC0A42548EF51C84 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6AAF0FD8B84119B99FF3E1 /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,33 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = FutureShopping/config.xml; sourceTree = "<group>"; };
 		F8428A1040D84EAD90836646 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
 		F8953BF797B0401797779842 /* scannerOverlay.xib */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = file.xib; path = scannerOverlay.xib; sourceTree = "<group>"; };
+		E517C2AC5BED4859A73B46B4 /* libzbar.a */ = {isa = PBXFileReference; name = "libzbar.a"; path = "FutureShopping/Plugins/cordova-plugin-cszbar/libzbar.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6573224B34E2401C99B70977 /* CsZBar.m */ = {isa = PBXFileReference; name = "CsZBar.m"; path = "cordova-plugin-cszbar/CsZBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BE06DE0696D24A6AAFFEC481 /* AlmaZBarReaderViewController.m */ = {isa = PBXFileReference; name = "AlmaZBarReaderViewController.m"; path = "cordova-plugin-cszbar/AlmaZBarReaderViewController.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		CAB077456880472BAEC87CE4 /* CsZBar.h */ = {isa = PBXFileReference; name = "CsZBar.h"; path = "cordova-plugin-cszbar/CsZBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		D16308AE506E4D839BA486F1 /* AlmaZBarReaderViewController.h */ = {isa = PBXFileReference; name = "AlmaZBarReaderViewController.h"; path = "cordova-plugin-cszbar/AlmaZBarReaderViewController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6DEEF2126CD94A8090595DF9 /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; name = "ZBarCameraSimulator.h"; path = "cordova-plugin-cszbar/ZBarCameraSimulator.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		FEDF4F0E7096411FA333BF57 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; name = "ZBarCaptureReader.h"; path = "cordova-plugin-cszbar/ZBarCaptureReader.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F385E52F167146019BCAEE50 /* ZBarHelpController.h */ = {isa = PBXFileReference; name = "ZBarHelpController.h"; path = "cordova-plugin-cszbar/ZBarHelpController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		CC49A084D5BC438489258172 /* ZBarImage.h */ = {isa = PBXFileReference; name = "ZBarImage.h"; path = "cordova-plugin-cszbar/ZBarImage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F156B370220144C6AA91D699 /* ZBarImageScanner.h */ = {isa = PBXFileReference; name = "ZBarImageScanner.h"; path = "cordova-plugin-cszbar/ZBarImageScanner.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6A979ED9F1484D32996A0314 /* ZBarReaderController.h */ = {isa = PBXFileReference; name = "ZBarReaderController.h"; path = "cordova-plugin-cszbar/ZBarReaderController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		081B695CED17445DBDCE670E /* ZBarReaderView.h */ = {isa = PBXFileReference; name = "ZBarReaderView.h"; path = "cordova-plugin-cszbar/ZBarReaderView.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		0F67AF835C824D9984121A96 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; name = "ZBarReaderViewController.h"; path = "cordova-plugin-cszbar/ZBarReaderViewController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		FC46247068CC4BE5999F6530 /* ZBarSDK.h */ = {isa = PBXFileReference; name = "ZBarSDK.h"; path = "cordova-plugin-cszbar/ZBarSDK.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		112D56077F914671AF2568E8 /* ZBarSymbol.h */ = {isa = PBXFileReference; name = "ZBarSymbol.h"; path = "cordova-plugin-cszbar/ZBarSymbol.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6FE7514A5E9B48189C2B3FB5 /* zbar.h */ = {isa = PBXFileReference; name = "zbar.h"; path = "cordova-plugin-cszbar/zbar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		70A6AB20734343F9B1FEC6C5 /* Decoder.h */ = {isa = PBXFileReference; name = "Decoder.h"; path = "cordova-plugin-cszbar/Decoder.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		2F9B50A3D84749E89219BF04 /* Exception.h */ = {isa = PBXFileReference; name = "Exception.h"; path = "cordova-plugin-cszbar/Exception.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		95BF116F51E84A6CAF4A0093 /* Image.h */ = {isa = PBXFileReference; name = "Image.h"; path = "cordova-plugin-cszbar/Image.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8BEA494A58F04BDBBAE48BDD /* ImageScanner.h */ = {isa = PBXFileReference; name = "ImageScanner.h"; path = "cordova-plugin-cszbar/ImageScanner.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		26FD661DB9A549A388856314 /* Processor.h */ = {isa = PBXFileReference; name = "Processor.h"; path = "cordova-plugin-cszbar/Processor.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		44166F37F5754EFCA8EB79B1 /* Scanner.h */ = {isa = PBXFileReference; name = "Scanner.h"; path = "cordova-plugin-cszbar/Scanner.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		5B41DCBB39674FBB8ACA1F4C /* Symbol.h */ = {isa = PBXFileReference; name = "Symbol.h"; path = "cordova-plugin-cszbar/Symbol.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		4D9E2F341050440AA7A0F463 /* Video.h */ = {isa = PBXFileReference; name = "Video.h"; path = "cordova-plugin-cszbar/Video.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		BFC9C4F36394425FA33C1A92 /* Window.h */ = {isa = PBXFileReference; name = "Window.h"; path = "cordova-plugin-cszbar/Window.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		CF833BD0641B42839D8F4A73 /* CsZBarScanView.xib */ = {isa = PBXFileReference; name = "CsZBarScanView.xib"; path = "CsZBarScanView.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
+		0B6AAF0FD8B84119B99FF3E1 /* CoreMedia.framework */ = {isa = PBXFileReference; name = "CoreMedia.framework"; path = "System/Library/Frameworks/CoreMedia.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +121,8 @@
 				A1913CA551C143DCB3082230 /* QuartzCore.framework in Frameworks */,
 				5D4FE37194BA4F09A6DC6E2D /* CoreImage.framework in Frameworks */,
 				CB44B9E53037439CA201BCD7 /* AudioToolbox.framework in Frameworks */,
+				C68085DFE24C4BAD9BE39D70 /* libzbar.a in Frameworks */,
+				762700C5EC0A42548EF51C84 /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +186,7 @@
 				8D1107310486CEB800E47090 /* FutureShopping-Info.plist */,
 				F8953BF797B0401797779842 /* scannerOverlay.xib */,
 				40BC996A5F014183AA95B05C /* CDVBarcodeScanner.bundle */,
+				CF833BD0641B42839D8F4A73 /* CsZBarScanView.xib */,
 			);
 			name = Resources;
 			path = FutureShopping/Resources;
@@ -167,6 +201,8 @@
 				335437B5BE3F4AD0941B1F26 /* QuartzCore.framework */,
 				392E50C8CA2D45309E32C84D /* CoreImage.framework */,
 				E47CDC4826534D52B694C5DC /* AudioToolbox.framework */,
+				E517C2AC5BED4859A73B46B4 /* libzbar.a */,
+				0B6AAF0FD8B84119B99FF3E1 /* CoreMedia.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +233,30 @@
 				01A70284B9A64A0EB6C43D83 /* zxing-all-in-one.h */,
 				F67DDF18D1F145E2A68ACCDD /* CDVLogger.m */,
 				F8428A1040D84EAD90836646 /* CDVLogger.h */,
+				6573224B34E2401C99B70977 /* CsZBar.m */,
+				BE06DE0696D24A6AAFFEC481 /* AlmaZBarReaderViewController.m */,
+				CAB077456880472BAEC87CE4 /* CsZBar.h */,
+				D16308AE506E4D839BA486F1 /* AlmaZBarReaderViewController.h */,
+				6DEEF2126CD94A8090595DF9 /* ZBarCameraSimulator.h */,
+				FEDF4F0E7096411FA333BF57 /* ZBarCaptureReader.h */,
+				F385E52F167146019BCAEE50 /* ZBarHelpController.h */,
+				CC49A084D5BC438489258172 /* ZBarImage.h */,
+				F156B370220144C6AA91D699 /* ZBarImageScanner.h */,
+				6A979ED9F1484D32996A0314 /* ZBarReaderController.h */,
+				081B695CED17445DBDCE670E /* ZBarReaderView.h */,
+				0F67AF835C824D9984121A96 /* ZBarReaderViewController.h */,
+				FC46247068CC4BE5999F6530 /* ZBarSDK.h */,
+				112D56077F914671AF2568E8 /* ZBarSymbol.h */,
+				6FE7514A5E9B48189C2B3FB5 /* zbar.h */,
+				70A6AB20734343F9B1FEC6C5 /* Decoder.h */,
+				2F9B50A3D84749E89219BF04 /* Exception.h */,
+				95BF116F51E84A6CAF4A0093 /* Image.h */,
+				8BEA494A58F04BDBBAE48BDD /* ImageScanner.h */,
+				26FD661DB9A549A388856314 /* Processor.h */,
+				44166F37F5754EFCA8EB79B1 /* Scanner.h */,
+				5B41DCBB39674FBB8ACA1F4C /* Symbol.h */,
+				4D9E2F341050440AA7A0F463 /* Video.h */,
+				BFC9C4F36394425FA33C1A92 /* Window.h */,
 			);
 			name = Plugins;
 			path = FutureShopping/Plugins;
@@ -239,7 +299,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 730;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5SXMJP4X76;
@@ -287,6 +347,7 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				F156FC30B5E34B829E3C6ECC /* scannerOverlay.xib in Resources */,
 				FF9D8F3B86224C0FA3084EF7 /* CDVBarcodeScanner.bundle in Resources */,
+				224035A984AE439B91480A09 /* CsZBarScanView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +382,8 @@
 				0F45C9D82B3C4322A038B936 /* CDVBarcodeScanner.mm in Sources */,
 				F8761F0778664BB3BBDA2076 /* zxing-all-in-one.cpp in Sources */,
 				C0869E817CC148D392390762 /* CDVLogger.m in Sources */,
+				A46050EF02474540821FB24D /* CsZBar.m in Sources */,
+				D1B4C1959EEC41C98EB90B3D /* AlmaZBarReaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +421,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.timvandevathorst.futureshopping;
 				PRODUCT_NAME = FutureShopping;
 				PROVISIONING_PROFILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FutureShopping/Plugins/cordova-plugin-cszbar\"",
+				);
 			};
 			name = Debug;
 		};
@@ -381,6 +448,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.timvandevathorst.futureshopping;
 				PRODUCT_NAME = FutureShopping;
 				PROVISIONING_PROFILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FutureShopping/Plugins/cordova-plugin-cszbar\"",
+				);
 			};
 			name = Release;
 		};

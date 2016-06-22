@@ -1,25 +1,11 @@
 <ion-view view-title="Winkelmand" hide-nav-bar="true">
      <ion-content>
-         <td-cards>
-              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
-              on-partial-swipe="cardPartialSwipe(amt)">
-                  <div class="title">
-                      {{card.title}}
-                  </div>
-                  <div class="image">
-                      <div class="no-text overlayBox"><div class="noBox boxed">Trash</div></div>
-                      <img ng-src="{{card.image}}">
-                      <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Save</div></div>
-                  </div>
-              </td-card>
-          </td-cards>
        <div class="list products">
        <ion-list ng-controller="ShoppingCart"
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
-          <ion-item class="item item-thumbnail-top"  ng-repeat="item in products">
+          <ion-item class="item item-thumbnail-top" ng-repeat="item in products">
            <h2 class="center">{{item.title}}</h2>
            <p class="center">€ {{item.prijsFrontEnd}}</p>
            <a href="#/product/{{item.id}}"><img class="center" src={{item.thumbnail}}></a>
@@ -37,6 +23,9 @@
               <i class="ion-ios-trash"></i>Delete
           </ion-option-button>      
         </ion-item>
+          <ion-item class="item afbeelding" ng-show="!products.length">
+            <img src="img/empty.png" alt="empty cart">
+          </ion-item>
         </ion-list>
        </div>       
      </ion-content>

@@ -69,19 +69,23 @@ angular.module('starter.services', [])
     all: function() {
       return products;
     },
-    add: function(li) {
-      
-      console.log("ik ben in de functie bitch");
-      console.log(li);
-      
-      if(products.indexOf(li))
-      {
+    add: function(li)
+    {
+      var result;
+
+      if(products) {
+        result = products.filter(function(v) {
+            return v.id === li.id;
+        })[0];
+      }
+            
+      if(result) {
+        products[getIndexOf(products, result.id, "id")].aantal += 1;        
+      } else {
         products.push(li); 
-        localStorage["products"] = JSON.stringify(products);
       }
-      else {
-        products[products.indexOf(li)].aantal += 1;
-      }
+
+      localStorage["products"] = JSON.stringify(products);
     },
     remove: function(product) {
       products.splice(products.indexOf(product), 1);
@@ -218,3 +222,14 @@ angular.module('starter.services', [])
     }
   };
 });
+
+function getIndexOf(arr, val, prop) {
+      var l = arr.length,
+        k = 0;
+      for (k = 0; k < l; k = k + 1) {
+        if (arr[k][prop] === val) {
+          return k;
+        }
+      }
+      return false;
+    }

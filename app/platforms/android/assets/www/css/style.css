@@ -440,3 +440,60 @@ ion-item.item-icon.item i.ion-plus-circled {
     vertical-align: middle;
     padding-left: 5px;
 }
+
+
+/* Style voor checkout */
+
+.annuleren {
+    margin-top: 20px;
+    float: left;
+    width: 45%
+}
+
+.betalen {
+    margin-top: 20px;
+    float: right;
+    width: 45%;
+}
+
+.checkoutview {
+    margin-top: -55px;
+}
+.totaalbedrag {
+    font-size: 32px;
+}
+
+.container-checkout {
+    padding: 15px;
+}
+
+ion-item.item.afbeelding {
+    border: none;
+    min-height: 100%;
+    width: 100%;
+}
+ion-item.item.afbeelding img {
+    width: 100%;
+}
+
+.popup-open {
+    pointer-events: auto !important;
+}
+.backdrop.visible.active {
+    opacity: 0;
+    z-index: -10;
+}
+.popup-container .popup {
+    background-color: rgba(255, 255, 255, 1);
+    border: 3px solid #387ef5;
+    border-radius: 4px;
+}
+.popup-container.ng-animate.animated-add.fadeOut-add.animated.fadeOut.animated-add-active.fadeOut-add-active.popup-showing.active {
+    visibility: visible;
+}
+.popup-container.animated.fadeOut.popup-showing.popup-hidden {
+    visibility: hidden;
+}
+.popup-container.animated.fadeOut.popup-showing.active {
+    visibility: hidden;
+}
