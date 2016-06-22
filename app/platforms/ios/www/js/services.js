@@ -53,7 +53,7 @@ angular.module('starter.services', [])
 {
   // Some fake testing data
   var products = [], 
-         favorites = [];
+      favorites = [];
 
    if(localStorage["products"])
    {
@@ -114,13 +114,28 @@ angular.module('starter.services', [])
       }
     },
     addToFavorites: function(product){
-      if(favorites.indexOf(product)) {
+      var result;
+
+      if(favorites) {
+        result = favorites.filter(function(v) {
+            return v.id === product.id;
+        })[0];
+      }
+            
+      if(!result) {
         favorites.push(product); 
         localStorage["favorites"] = JSON.stringify(favorites);
-        console.log(favorites);
-      }      
+        console.log("In de favorieten gestopt.");
+      } else{
+        console.log("Het zit al in de de favorieten.");
+      }  
     },
     getFavorites: function() {
+      if(localStorage["favorites"])
+      {
+        favorites = JSON.parse(localStorage["favorites"]);  
+      }
+      console.log(favorites);
       return favorites;
     },
     removeFavorite: function(product) {
@@ -134,6 +149,24 @@ angular.module('starter.services', [])
           return products[i];
         }
       }
+    },
+    addQuantity: function(li)
+    {
+      var result;
+
+      if(products) {
+        result = products.filter(function(v) {
+            return v.id === li.id;
+        })[0];
+      }
+            
+      if(result) {
+        products[getIndexOf(products, result.id, "id")].aantal += 1;        
+      } else {
+        products.push(li); 
+      }
+
+      localStorage["products"] = JSON.stringify(products);
     }
   };
 })
@@ -143,10 +176,10 @@ angular.module('starter.services', [])
 
   var shoppingList = [];
   var tutorialList = [
-    {title: "Gouda Kaas 48+", aantal: 1, checked: false}, 
-    {title: "Quaker Havermout", aantal: 2, checked: false}, 
-    {title: "Calvé Pindakaas", aantal: 1, checked: false}, 
-    {title: "AH Frambozenvla", aantal: 1, checked: false}
+    {"title": "Gouda Kaas 48+", "aantal": 1, "checked": false}, 
+    {"title": "Quaker Havermout", "aantal": 2, "checked": false}, 
+    {"title": "Calvé Pindakaas", "aantal": 1, "checked": false}, 
+    {"title": "AH Frambozenvla", "aantal": 1, "checked": false}
   ];
 
   if(localStorage["shoppingList"]){
@@ -206,21 +239,47 @@ angular.module('starter.services', [])
     },
     checkTutorialItem: function(li)
     {
-      // If statements voor gekke bug. Als indexOf() 0 terug geeft, werkt de boel niet,
-      // maar als ik het zo gewoon 2x typ werkt alles dus.. is gucci.
-      if(tutorialList.indexOf(li))
-      {
-        var i = tutorialList.indexOf(li);
-        tutorialList[i].checked = !tutorialList[i].checked; 
-        console.log(tutorialList[i]);
-      }else
-      {
-        var i = tutorialList.indexOf(li);
-        tutorialList[i].checked = !tutorialList[i].checked;        
-        console.log(tutorialList[i]);
-      } 
+
+      var i = tutorialList.indexOf(li);
+      tutorialList[i].checked = !tutorialList[i].checked; 
+      console.log(tutorialList[i]);
+    },
+    clearList: function()
+    {
+      shoppingList = [];
+      localStorage["shoppingList"] = JSON.stringify(shoppingList);
     }
   };
+})
+
+
+.factory('AllProducts', function()
+{
+  var allProducts = [];
+  if(localStorage["AllProducts"])
+  {
+    allProducts = JSON.parse(localStorage["AllProducts"]);
+  }
+
+  return {
+    all: function(){
+      return AllProducts;
+    },
+    getByID: function(productId) {
+      console.log("In AllProducts: getByID");
+      for (var i = 0; i < allProducts.length; i++) {
+        if (allProducts[i].id == parseInt(productId)) {
+          return allProducts[i];
+        }
+      }
+    },
+    addRating: function (product, number)
+    {
+      console.log(product, number);
+      allProducts[allProducts.indexOf(product)].rating.push(number);
+      localStorage["AllProducts"] = JSON.stringify(allProducts);
+    }
+  }
 });
 
 function getIndexOf(arr, val, prop) {

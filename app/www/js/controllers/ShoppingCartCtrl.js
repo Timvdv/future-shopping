@@ -123,30 +123,6 @@ function($scope, $http, $location, Products, $ionicListDelegate, $ionicPopup)
                     console.log("cancelled :(")
                     console.log(s);
                 })
-
-        //     $cordovaBarcodeScanner.scan().then(function(imageData)
-        //     {
-        //         $scope.currentlyScanning = false;                
-        //         $scope.product_data = imageData.text;
-        //     }, function(error)
-        //     {
-        //         console.log("An error happened -> " + error);
-        //     });
             }
     };
-
-//    $scope.addProduct(pr_string);
-
-    /**
-     * BIJNA KLAAR .. hij triggert enzo moet alleen nog toevoegen, wss iets geks met de JSON
-     */
-    $scope.$watch('product_data', function(newVal, oldVal)
-    {
-        if(newVal != "nothing yet")
-        {
-            console.log("add product");
-            $scope.addProduct(newVal);
-        }
-        
-    });
 }]);
