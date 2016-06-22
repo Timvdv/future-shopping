@@ -1,15 +1,16 @@
-angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope', '$http', '$location' , 'Products', '$ionicPopup','$stateParams', 
-  function($scope, $http, $location, Products, $ionicPopup, $stateParams)
+angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope', '$http', '$location' , 'AllProducts', '$ionicPopup','$stateParams', 
+  function($scope, $http, $location, AllProducts, $ionicPopup, $stateParams)
 {
-  $scope.product = Products.getByID($stateParams.productId);
+  $scope.product = AllProducts.getByID($stateParams.productId);
   $scope.settings = {
     aanbieding: true,
     proximity: false
   };
 
+  console.log($scope.product);
   $scope.addRating = function(rating) {
     // add rating functie maken in factory.
-    Products.addRating($scope.product, rating);
+    AllProducts.addRating($scope.product, rating);
     $scope.averageRating();
     $scope.showPopup();
   }
@@ -38,7 +39,10 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
       title: 'Bedankt voor uw beoordeling!',
       subTitle: 'Uw mede klanten zullen uw mening zeer op prijs stellen.',
       scope: $scope,
-      cssClass: 'animated fadeOut animated'
+      cssClass: 'animated fadeOut animated',
+      onTap: function(e) {
+            myPopup.close();
+          } 
     });
   };
 }]);
