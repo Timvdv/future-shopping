@@ -505,3 +505,54 @@ ion-item.item.afbeelding img {
 .popup-container.animated.fadeOut.popup-showing.active {
     visibility: hidden;
 }
+img.qrcode-afrekenen {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+h3.title {
+    text-align: center;
+}
+a.button.button-assertive.annuleren-qrpage {
+    padding: 0px 20px;
+    line-height: 47px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 80%;
+    box-sizing: border-box;
+    right: 0;
+}
+a.button.button-balanced.annuleren-qrpage {
+    padding: 0px 20px;
+    line-height: 47px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 80%;
+    box-sizing: border-box;
+    right: 0;
+}
+img.betaald {
+    width: 170px;   
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+p.incasso {
+    padding: 40px 10px 10px 10px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 28px;
+}
