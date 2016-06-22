@@ -1,5 +1,5 @@
-angular.module('starter.controllers').controller('ShoppingCart', ['$scope', '$http', '$location' , 'Products', '$cordovaBarcodeScanner', '$ionicListDelegate', '$ionicPopup',
-function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListDelegate, $ionicPopup)
+angular.module('starter.controllers').controller('ShoppingCart', ['$scope', '$http', '$location' , 'Products', '$ionicListDelegate', '$ionicPopup',
+function($scope, $http, $location, Products, $ionicListDelegate, $ionicPopup)
 {
     $scope.shouldShowDelete = false;
     $scope.shouldShowReorder = false;
@@ -90,25 +90,15 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
 
     $scope.addProduct = function(product)
     {
-        console.log("IN THE ADD PRODUCT with:" + product);
-
         product = JSON.parse(product);
-        var storage = [];
+        Products.add(product);
 
-        if(localStorage['products'])
-        {
-            storage = JSON.parse(localStorage["products"]);
-        }
-        
-        storage.push(product);
+        $scope.showPopup(product.title + " zit in de winkelmand!", "Ga scan meer om meer toe te voegen.");
 
-        console.log(storage);
-
-        if(!storage.indexOf(product))
-        {
-            localStorage["products"] = JSON.stringify(storage);
-            $scope.showPopup(product.title + " zit in de winkelmand!", "Ga scan meer om meer toe te voegen.");
-        }
+        // setTimeout(function()
+        // {
+        //     location.reload();
+        // }, 400)
     }
 
     // Hoi timmie. De json van PRODUCTEN is veranderd. Er zitten nu ratings bij dus hou daar rekening mee als je nieuwe JSON probeert toe te voegen
@@ -118,11 +108,9 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
     // }
 
     $scope.currentlyScanning = false;
-    var pr_string = JSON.stringify({ id: 8, title: 'AH Frambozenvla', prijsFrontEnd: "1,05", prijs: 1.05, inhoud: "1 liter", thumbnail:"img/frambozenvla.JPG", aantal: 1, inpakTijd: 12, rating: [1,5,3,4,4,3,3,4,5,5]});
+    var pr_string = JSON.stringify({ "id": 8, "title": "AH Frambozenvla", "prijsFrontEnd": "1,05", "prijs": 1.05, "inhoud": "1 liter", "thumbnail":"img/frambozenvla.JPG", "aantal": 1, "inpakTijd": 12, "rating": [1,5,3,4,4,3,3,4,5,5]});
 
     $scope.product_data = "nothing yet";
-
-    $scope.addProduct(pr_string);
 
     $scope.scanBarcode = function()
     {
@@ -130,31 +118,40 @@ function($scope, $http, $location, Products, $cordovaBarcodeScanner, $ionicListD
         {
             $scope.currentlyScanning = true;
 
-            $cordovaBarcodeScanner.scan().then(function(imageData)
-            {
-                $scope.currentlyScanning = false;                
-                $scope.product_data = imageData.text;
-                
-            }, function(error)
-            {
-                console.log("An error happened -> " + error);
-            });
-        }
+            cloudSky.zBar.scan({}, function onSuccess(s)
+                {
+                    $scope.currentlyScanning = false;                
+                    $scope.product_data = s;
+                    $scope.addProduct(s);
+                }, function onFailure(s)
+                {
+                    console.log("cancelled :(")
+                    console.log(s);
+                })
+
+        //     $cordovaBarcodeScanner.scan().then(function(imageData)
+        //     {
+        //         $scope.currentlyScanning = false;                
+        //         $scope.product_data = imageData.text;
+        //     }, function(error)
+        //     {
+        //         console.log("An error happened -> " + error);
+        //     });
+            }
     };
+
+//    $scope.addProduct(pr_string);
 
     /**
      * BIJNA KLAAR .. hij triggert enzo moet alleen nog toevoegen, wss iets geks met de JSON
      */
     $scope.$watch('product_data', function(newVal, oldVal)
     {
-        console.log(newVal);
-    
-        if(newVal && newVal != "nothing yet")
+        if(newVal != "nothing yet")
         {
-            console.log("in de if statement");
-            console.log("Calling add product");
+            console.log("add product");
             $scope.addProduct(newVal);
-            console.log("Continue code. if its not here it failed miserably");
         }
+        
     });
 }]);

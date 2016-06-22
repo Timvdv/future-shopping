@@ -122,4 +122,9 @@
     <string name="wifi_changing_network">Requesting connection to network\u2026</string>
     <string name="wifi_ssid_label">Network Name</string>
     <string name="wifi_type_label">Type</string>
+    <string name="csZbarScannerTitle">Scan QR Code</string>
+    <string name="csZbarScannerInstructions">Please point your camera at the QR code.</string>
+    <color name="csZbarScannerTextColor">#ffffff</color>
+    <color name="csZbarScannerTextBackground">#88000000</color>
+    <color name="csZbarScannerBackground">#000000</color>
 </resources>
