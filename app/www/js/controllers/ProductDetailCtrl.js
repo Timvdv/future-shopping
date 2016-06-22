@@ -31,81 +31,70 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
 
   } 
 
+  $scope.firstCheck = true;
+
 
   $scope.arrangeStars = function()
   {
+    console.log("Calculating stars....");
     // KOTS CODE!!!!!!!
-    var star1 = document.getElementById("1star");
-    var star2 = document.getElementById("2star");
-    var star3 = document.getElementById("3star");
-    var star4 = document.getElementById("4star");
-    var star5 = document.getElementById("5star");
 
     // voor star1
     if($scope.averageRating() > 0 && $scope.averageRating() <= 0.5)
     {
-      star1.className = "ion-ios-star-half";
+      $scope.star1 = "ion-ios-star-half";
     } else if ($scope.averageRating() > 0.51){
-      star1.className = "ion-ios-star";
+      $scope.star1 = "ion-ios-star";
     } else
     {
-      star1.className = "ion-ios-star-outline";
-    }
-
-        // voor star1
-    if($scope.averageRating() > 0 && $scope.averageRating() <= 0.5)
-    {
-      star1.className = "ion-ios-star-half";
-    } else if ($scope.averageRating() > 0.51){
-      star1.className = "ion-ios-star";
-    } else
-    {
-      star1.className = "ion-ios-star-outline";
+      $scope.star1 = "ion-ios-star-outline";
     }
 
     // voor star2
     if($scope.averageRating() > 1 && $scope.averageRating() <= 1.5)
     {
-      star2.className = "ion-ios-star-half";
+      $scope.star2 = "ion-ios-star-half";
     } else if ($scope.averageRating() > 1.51){
-      star2.className = "ion-ios-star";
+      $scope.star2 = "ion-ios-star";
     } else
     {
-      star2.className = "ion-ios-star-outline";
+      $scope.star2 = "ion-ios-star-outline";
     }
 
     // voor star3
     if($scope.averageRating() > 2 && $scope.averageRating() <= 2.5)
     {
-      star3.className = "ion-ios-star-half";
+      $scope.star3 = "ion-ios-star-half";
     } else if ($scope.averageRating() > 2.51){
-      star3.className = "ion-ios-star";
+      $scope.star3 = "ion-ios-star";
     } else
     {
-      star3.className = "ion-ios-star-outline";
+      $scope.star3 = "ion-ios-star-outline";
     }
 
     // voor star4
     if($scope.averageRating() > 3 && $scope.averageRating() <= 3.5)
     {
-      star4.className = "ion-ios-star-half";
+      $scope.star4 = "ion-ios-star-half";
     } else if ($scope.averageRating() > 3.51){
-      star4.className = "ion-ios-star";
+      $scope.star4 = "ion-ios-star";
     } else
     {
-      star4.className = "ion-ios-star-outline";
+      $scope.star4 = "ion-ios-star-outline";
     }
 
     // voor star5
     if($scope.averageRating() > 4 && $scope.averageRating() <= 4.5)
     {
-      star5.className = "ion-ios-star-half";
+      $scope.star5 = "ion-ios-star-half";
     } else if ($scope.averageRating() > 4.51){
-      star5.className = "ion-ios-star";
+      $scope.star5 = "ion-ios-star";
     } else
     {
-      star5.className = "ion-ios-star-outline";
+      $scope.star5 = "ion-ios-star-outline";
     }
+
+    $scope.firstCheck = false;
   }
 
 
