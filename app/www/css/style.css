@@ -564,3 +564,8 @@ p.incasso {
 .banken img:hover {
     background: rgba(125, 125, 125, 0.1);
 }
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]
+{
+    background: white;
+}
