@@ -561,3 +561,6 @@ p.incasso {
     border-radius: 3px;
     margin-bottom: 10px;
 }
+.banken img:hover {
+    background: rgba(125, 125, 125, 0.1);
+}
