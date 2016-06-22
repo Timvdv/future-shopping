@@ -466,6 +466,8 @@ i.ion-ios-star-half {
 
 .container-checkout {
     padding: 15px;
+    height: 100vh;
+    position: relative;
 }
 
 ion-item.item.afbeelding {
@@ -504,4 +506,43 @@ ion-item.item.afbeelding img {
 }
 .popup-container.animated.fadeOut.popup-showing.active {
     visibility: hidden;
+}
+img.qrcode-afrekenen {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 50px;
+}
+h3.title {
+    text-align: center;
+}
+a.button.button-assertive.annuleren-qrpage {
+    padding: 0px 20px;
+    line-height: 47px;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+a.button.button-balanced.annuleren-qrpage {
+    padding: 0px 20px;
+    line-height: 47px;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+img.betaald {
+    width: 170px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 50px;
+}
+p.incasso {
+    padding: 40px 10px 10px 10px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 28px;
 }

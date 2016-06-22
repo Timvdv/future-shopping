@@ -118,6 +118,7 @@ function($scope, $http, $location, Products, $ionicListDelegate, $ionicPopup)
                     $scope.currentlyScanning = false;                
                     $scope.product_data = s;
                     $scope.addProduct(s);
+                    $scope.calculateData();
                 }, function onFailure(s)
                 {
                     console.log("cancelled :(")
