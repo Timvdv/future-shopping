@@ -466,7 +466,7 @@ i.ion-ios-star-half {
 
 .container-checkout {
     padding: 15px;
-    height: 100vh;
+    height: 90vh;
     position: relative;
 }
 
@@ -545,4 +545,19 @@ p.incasso {
     text-align: center;
     font-size: 20px;
     line-height: 28px;
+}
+.banken {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    padding-top: 20px;
+}
+.banken img {
+    width: 45%;
+    height: 110px;
+    object-fit: contain;
+    border: 1px solid #efefef;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }

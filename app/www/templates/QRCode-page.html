@@ -5,8 +5,14 @@
         <h1 class="title">Afrekenen</h1>
     </div> -->
     <div class="container-checkout">
-    <div class="bankieren" ng-show="payment.Banken">
+    <div class="bankieren" ng-show="payment.Img1">
       <h3 class="title">Kies een bank</h3>
+      <div class="banken">
+        <img src="{{payment.Img1}}" alt="ing">
+        <img src="{{payment.Img2}}" alt="rabo">
+        <img src="{{payment.Img3}}" alt="abn">
+        <img src="{{payment.Img4}}" alt="bunq">
+      </div>
       <a href="#/shopping-cart" class="button button-assertive annuleren-qrpage">Annuleren</a>
     </div>
     <div class="pinnen" ng-show="payment.Img">

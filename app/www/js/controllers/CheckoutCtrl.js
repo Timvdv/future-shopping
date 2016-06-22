@@ -24,25 +24,14 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
     $scope.calculateData();
 
     $scope.bankieren = {
-        Banken : [
-            {
-                BankNaam: 'ING',
-                Img: 'img/ing.png'
-            },
-            {
-                BankNaam: 'RABO',
-                Img: 'img/rabo.jpg'
-            },
-            {
-                BankNaam: 'ABO-AMRO',
-                Img: 'img/abnamro.png'
-            },
-            {
-                BankNaam: 'Bunq',
-                Img: 'img/bunq.png'
-            }
-        ]
-
+        BankNaam1: 'ING',
+        Img1: 'img/ing.png',
+        BankNaam2: 'RABO',
+        Img2: 'img/rabo.jpg',
+        BankNaam3: 'ABO-AMRO',
+        Img3: 'img/abnamro.png',
+        BankNaam4: 'Bunq',
+        Img4: 'img/bunq.png'
     };
     $scope.pinnen = {
         Img: 'img/QR-code.jpg'
