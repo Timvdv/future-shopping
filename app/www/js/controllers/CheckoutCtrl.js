@@ -1,10 +1,10 @@
 angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$http', '$location' , 'Products', '$rootScope', function($scope, $http, $location, Products, $rootScope)
 {
-	// var totalprice = 0;
-	$scope.products = Products.all();
-	$scope.totalPrice = 0;
+    // var totalprice = 0;
+    $scope.products = Products.all();
+    $scope.totalPrice = 0;
 
-	// Bereken de nieuwe totale prijs & de inpaktijd.
+     // Bereken de nieuwe totale prijs & de inpaktijd.
     $scope.calculateData = function() 
     {
         var totalPrice = 0;
@@ -42,6 +42,7 @@ angular.module('starter.controllers').controller('CheckoutCtrl', ['$scope', '$ht
 
     $scope.pay = function(payment)
     {
+        $scope.calculateData();
         $rootScope.payment = payment;
         console.log(payment);
     }
