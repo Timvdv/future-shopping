@@ -17,7 +17,9 @@
       <ion-radio ng-model="payment.choice" ng-value="pinnen" ng-change="pay(payment.choice)">PIN</ion-radio>
       <ion-radio ng-model="payment.choice" ng-value="automatisch" ng-change="pay(payment.choice)">Automatische incasso (Instellingen)</ion-radio>
         <a href="#/shopping-cart" class="button button-assertive annuleren">Annuleren</a>
-        <a href="#/payment" class="button button-balanced betalen">Betalen</a>
+        
+        <a ng-hide="!payment.choice" href="#/payment" class="button button-balanced betalen">Betalen</a>
+        <a ng-hide="payment.choice" href="#/payment" class="button button-balanced disabled betalen">Betalen</a>
     </div>
   </ion-content>
 </ion-view> 
