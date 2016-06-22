@@ -24,6 +24,8 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
       total += $scope.product.rating[i];
     };
     average = total / $scope.product.rating.length;
+    average = parseFloat(average.toFixed(1).split('.')[0] + '.' + average.toFixed(1).split('.')[1])
+
     $scope.rating = average;
     $scope.ratingCount = $scope.product.rating.length;
 
@@ -33,12 +35,8 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
 
   $scope.firstCheck = true;
 
-
   $scope.arrangeStars = function()
   {
-    console.log("Calculating stars....");
-    // KOTS CODE!!!!!!!
-
     // voor star1
     if($scope.averageRating() > 0 && $scope.averageRating() <= 0.5)
     {
@@ -97,12 +95,8 @@ angular.module('starter.controllers').controller('ProductDetailCtrl', ['$scope',
     $scope.firstCheck = false;
   }
 
-
   $scope.averageRating();
   $scope.arrangeStars();
-
-
-
 
   $scope.showPopup = function() {
     $scope.data = {};
